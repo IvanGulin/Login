@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Login
 {
     public partial class Registro : Form
     {
-        private Dictionary<string, string> usuarios;
-        public Registro(ref Dictionary<string, string> usuarios)
+        private ClaseSQL sql = new ClaseSQL();
+        public Registro()
         {
             InitializeComponent();
-            this.usuarios = usuarios;
         }
 
         private void botonRegistrar_Click(object sender, EventArgs e)
@@ -22,8 +20,6 @@ namespace Login
         {
             if (ComprobarDatos())
             {
-                usuarios.Add(entradaUsuario.Text, entradaContraseña.Text);
-                Usuarios usuario = new Usuarios(entradaUsuario.Text, entradaContraseña.Text, entradaCorreo.Text);
                 MessageBox.Show("Usuario registrado correctamente.");
                 Close();
             }
@@ -31,23 +27,25 @@ namespace Login
 
         private bool ComprobarDatos()
         {
-            if (!usuarios.ContainsKey(entradaUsuario.Text))
+            if (entradaUsuario.Text.Length > 6 && entradaContraseña.Text.Length > 6
+                && entradaCorreo.Text.Length > 10 && entradaContraseña.Text.Equals(entradaContraseña2.Text))
             {
-                if (entradaUsuario.Text.Length > 6 && entradaContraseña.Text.Length > 6 
-                    && entradaCorreo.Text.Length > 10 && entradaContraseña.Text.Equals(entradaContraseña2.Text))
+                if (sql.AddUsuario(entradaUsuario.Text, entradaContraseña.Text, entradaCorreo.Text))
                 {
                     return true;
                 }
-                MessageBox.Show("Usuario / contraseña / correo no válidos.");
-                entradaContraseña.Text = "";
-                entradaContraseña2.Text = "";
-                return false;
+                else
+                {
+                    MessageBox.Show("Ese usuario ya esta registrado.");
+                    return false;
+                }
             }
-            else
-            {
-                MessageBox.Show("Ese usuario ya esta registrado.");
-                return false;
-            }
+            MessageBox.Show("Usuario / contraseña / correo no válidos.\n" +
+                "Usuario y contraseña deben tener mas de 6 carácteres.\n" +
+                "El correo debe tener más de 10 carácteres.");
+            entradaContraseña.Text = "";
+            entradaContraseña2.Text = "";
+            return false;
         }
 
         private void entradaContraseña2_KeyDown(object sender, KeyEventArgs e)

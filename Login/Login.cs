@@ -1,35 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Login
 {
     public partial class Login : Form
     {
-        private Dictionary<string, string> usuarios;
+        private ClaseSQL sql = new ClaseSQL();
         public Login()
         {
             InitializeComponent();
-
-            usuarios = new Dictionary<string, string>();
-            CargarAdmin();
-        }
-
-        private void CargarAdmin()
-        {
-            usuarios.Add("admin", "admin");
         }
 
         private bool ComprobarUsuario()
         {
-            foreach (var usuario in usuarios)
-            {
-                if (entradaUsuario.Text.Equals(usuario.Key) && entradaContraseña.Text.Equals(usuario.Value))
-                {
-                    return true;
-                }
-            }
-            return false;
+            return sql.ValidarUsuario(entradaUsuario.Text, entradaContraseña.Text);
         }
 
         private void botonEntrar_Click(object sender, EventArgs e)
@@ -40,7 +24,7 @@ namespace Login
             }
             else
             {
-                MessageBox.Show("*El usuario y contraseña deben tener mas de 4 carácteres.*");
+                MessageBox.Show("*El usuario y contraseña deben tener más de 4 carácteres.*");
             }
         }
 
@@ -50,7 +34,9 @@ namespace Login
             {
                 entradaUsuario.Text = "";
                 entradaContraseña.Text = "";
-                MessageBox.Show("Accediendo correctamente.");
+                MessageBox.Show("Acceso concedido.");
+                Aplicacion app = new Aplicacion();
+                app.ShowDialog();
             }
             else
             {
@@ -66,15 +52,11 @@ namespace Login
             {
                 ComprobarLogin();
             }
-            if (e.KeyCode == Keys.Enter)
-            {
-                MessageBox.Show("*El usuario y contraseña deben tener mas de 4 carácteres.*");
-            }
         }
 
         private void botonRegistrarse_Click(object sender, EventArgs e)
         {
-            Registro registro = new Registro(ref usuarios);
+            Registro registro = new Registro();
             registro.ShowDialog();
         }
     }
