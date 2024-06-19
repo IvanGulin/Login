@@ -33,8 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.LabelTemperatura = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -53,6 +51,7 @@
             this.entradaCiudad.Name = "entradaCiudad";
             this.entradaCiudad.Size = new System.Drawing.Size(171, 20);
             this.entradaCiudad.TabIndex = 1;
+            this.entradaCiudad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.entradaCiudad_KeyDown);
             // 
             // label2
             // 
@@ -76,36 +75,30 @@
             // LabelTemperatura
             // 
             this.LabelTemperatura.AutoSize = true;
-            this.LabelTemperatura.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LabelTemperatura.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTemperatura.Location = new System.Drawing.Point(0, 0);
+            this.LabelTemperatura.Location = new System.Drawing.Point(232, 277);
             this.LabelTemperatura.Name = "LabelTemperatura";
             this.LabelTemperatura.Size = new System.Drawing.Size(65, 20);
-            this.LabelTemperatura.TabIndex = 4;
+            this.LabelTemperatura.TabIndex = 6;
             this.LabelTemperatura.Text = "label3";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.LabelTemperatura);
-            this.panel1.Location = new System.Drawing.Point(248, 269);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(383, 46);
-            this.panel1.TabIndex = 5;
+            this.LabelTemperatura.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Aplicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.LabelTemperatura);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.entradaCiudad);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximumSize = new System.Drawing.Size(800, 500);
+            this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "Aplicacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Applicacion";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,6 +111,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label LabelTemperatura;
-        private System.Windows.Forms.Panel panel1;
     }
 }

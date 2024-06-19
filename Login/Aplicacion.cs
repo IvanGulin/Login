@@ -30,12 +30,18 @@ namespace Login
                 }
                 catch (HttpRequestException e)
                 {
+                    MessageBox.Show(e.Message);
                     return null;
                 }
             }
         }
 
         private async void button1_Click(object sender, EventArgs e)
+        {
+            await EjecutarTiempo();
+        }
+
+        private async Task EjecutarTiempo()
         {
             string ciudadNombre = entradaCiudad.Text;
 
@@ -47,6 +53,7 @@ namespace Login
 
             string url = string.Format(apiUrl, ciudadNombre, apiKey);
             WeatherData weatherData = await GetWeatherData(url);
+
             if (weatherData != null)
             {
                 LabelTemperatura.Text = $"La temperatura en {weatherData.name} es {weatherData.main.temp}°C";
@@ -54,6 +61,14 @@ namespace Login
             else
             {
                 MessageBox.Show("No se pudo obtener la información del clima.");
+            }
+        }
+
+        private async void entradaCiudad_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                await EjecutarTiempo();
             }
         }
     }

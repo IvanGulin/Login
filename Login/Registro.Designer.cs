@@ -135,6 +135,7 @@
             this.botonLogin.TabIndex = 15;
             this.botonLogin.Text = "Login";
             this.botonLogin.UseVisualStyleBackColor = false;
+            this.botonLogin.Click += new System.EventHandler(this.botonLogin_Click);
             // 
             // entradaContraseña2
             // 
@@ -173,9 +174,11 @@
             this.Controls.Add(this.entradaUsuario);
             this.Controls.Add(this.labelContraseña);
             this.Controls.Add(this.labelUsuario);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximumSize = new System.Drawing.Size(500, 500);
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "Registro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
             this.ResumeLayout(false);
             this.PerformLayout();

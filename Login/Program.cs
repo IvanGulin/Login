@@ -13,6 +13,13 @@ namespace Login
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Ruta a la base de datos SQLite
+            string ruta = "usuarios.db";
+
+            // Crear instancia de DatabaseHelper
+            BD baseDatos = new BD(ruta);
+
             Application.Run(new Login());
         }
     }

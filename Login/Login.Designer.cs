@@ -33,7 +33,6 @@
             this.entradaUsuario = new System.Windows.Forms.TextBox();
             this.entradaContraseña = new System.Windows.Forms.TextBox();
             this.labelLogin = new System.Windows.Forms.Label();
-            this.botonRegistrarse = new System.Windows.Forms.Button();
             this.botonEntrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -86,21 +85,6 @@
             this.labelLogin.TabIndex = 4;
             this.labelLogin.Text = "Login";
             // 
-            // botonRegistrarse
-            // 
-            this.botonRegistrarse.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.botonRegistrarse.FlatAppearance.BorderSize = 0;
-            this.botonRegistrarse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.botonRegistrarse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.botonRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonRegistrarse.Location = new System.Drawing.Point(397, 426);
-            this.botonRegistrarse.Name = "botonRegistrarse";
-            this.botonRegistrarse.Size = new System.Drawing.Size(75, 23);
-            this.botonRegistrarse.TabIndex = 5;
-            this.botonRegistrarse.Text = "Registrarse";
-            this.botonRegistrarse.UseVisualStyleBackColor = false;
-            this.botonRegistrarse.Click += new System.EventHandler(this.botonRegistrarse_Click);
-            // 
             // botonEntrar
             // 
             this.botonEntrar.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -122,15 +106,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.botonEntrar);
-            this.Controls.Add(this.botonRegistrarse);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.entradaContraseña);
             this.Controls.Add(this.entradaUsuario);
             this.Controls.Add(this.labelContraseña);
             this.Controls.Add(this.labelUsuario);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximumSize = new System.Drawing.Size(500, 500);
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -144,7 +129,6 @@
         private System.Windows.Forms.TextBox entradaUsuario;
         private System.Windows.Forms.TextBox entradaContraseña;
         private System.Windows.Forms.Label labelLogin;
-        private System.Windows.Forms.Button botonRegistrarse;
         private System.Windows.Forms.Button botonEntrar;
     }
 }

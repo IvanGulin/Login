@@ -56,5 +56,10 @@ namespace Login
                 Registrar();
             }
         }
+
+        private void botonLogin_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
