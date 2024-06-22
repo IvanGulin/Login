@@ -10,7 +10,6 @@ namespace Login
         {
             InitializeComponent();
             sql = new ClaseSQL();
-
             DataTable database = sql.LlenarDataGridView();
             dataGridViewUsuarios.DataSource = database;
         }

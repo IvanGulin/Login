@@ -43,14 +43,16 @@
             // 
             // botonRegistrar
             // 
-            this.botonRegistrar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.botonRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.botonRegistrar.FlatAppearance.BorderSize = 0;
             this.botonRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.botonRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.botonRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(120)))));
             this.botonRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonRegistrar.Location = new System.Drawing.Point(198, 338);
+            this.botonRegistrar.Font = new System.Drawing.Font("Perpetua Titling MT", 14.25F, System.Drawing.FontStyle.Bold);
+            this.botonRegistrar.ForeColor = System.Drawing.Color.Silver;
+            this.botonRegistrar.Location = new System.Drawing.Point(177, 338);
             this.botonRegistrar.Name = "botonRegistrar";
-            this.botonRegistrar.Size = new System.Drawing.Size(87, 44);
+            this.botonRegistrar.Size = new System.Drawing.Size(139, 44);
             this.botonRegistrar.TabIndex = 12;
             this.botonRegistrar.Text = "Registrar";
             this.botonRegistrar.UseVisualStyleBackColor = false;
@@ -59,10 +61,11 @@
             // labelRegistro
             // 
             this.labelRegistro.AutoSize = true;
-            this.labelRegistro.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegistro.Location = new System.Drawing.Point(182, 25);
+            this.labelRegistro.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegistro.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelRegistro.Location = new System.Drawing.Point(170, 24);
             this.labelRegistro.Name = "labelRegistro";
-            this.labelRegistro.Size = new System.Drawing.Size(120, 29);
+            this.labelRegistro.Size = new System.Drawing.Size(152, 39);
             this.labelRegistro.TabIndex = 11;
             this.labelRegistro.Text = "Registro";
             // 
@@ -87,20 +90,22 @@
             // labelContraseña
             // 
             this.labelContraseña.AutoSize = true;
-            this.labelContraseña.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelContraseña.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold);
+            this.labelContraseña.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelContraseña.Location = new System.Drawing.Point(193, 221);
             this.labelContraseña.Name = "labelContraseña";
-            this.labelContraseña.Size = new System.Drawing.Size(99, 29);
+            this.labelContraseña.Size = new System.Drawing.Size(99, 21);
             this.labelContraseña.TabIndex = 8;
             this.labelContraseña.Text = "Contraseña";
             // 
             // labelUsuario
             // 
             this.labelUsuario.AutoSize = true;
-            this.labelUsuario.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsuario.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold);
+            this.labelUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelUsuario.Location = new System.Drawing.Point(160, 90);
             this.labelUsuario.Name = "labelUsuario";
-            this.labelUsuario.Size = new System.Drawing.Size(160, 29);
+            this.labelUsuario.Size = new System.Drawing.Size(162, 21);
             this.labelUsuario.TabIndex = 7;
             this.labelUsuario.Text = "Nombre de usuario";
             // 
@@ -115,10 +120,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(160, 155);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 29);
+            this.label1.Size = new System.Drawing.Size(156, 21);
             this.label1.TabIndex = 13;
             this.label1.Text = "Correo electrónico";
             // 
@@ -133,7 +139,7 @@
             this.botonLogin.Name = "botonLogin";
             this.botonLogin.Size = new System.Drawing.Size(75, 23);
             this.botonLogin.TabIndex = 15;
-            this.botonLogin.Text = "Login";
+            this.botonLogin.Text = "Menú Admin";
             this.botonLogin.UseVisualStyleBackColor = false;
             this.botonLogin.Click += new System.EventHandler(this.botonLogin_Click);
             // 
@@ -151,10 +157,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(160, 291);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 29);
+            this.label2.Size = new System.Drawing.Size(177, 21);
             this.label2.TabIndex = 16;
             this.label2.Text = "Confirma Contraseña";
             // 
@@ -162,6 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.entradaContraseña2);
             this.Controls.Add(this.label2);
@@ -175,9 +183,13 @@
             this.Controls.Add(this.labelContraseña);
             this.Controls.Add(this.labelUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(500, 500);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "Registro";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
             this.ResumeLayout(false);

@@ -32,7 +32,18 @@ namespace Login
             eliminar.ShowDialog();
 
             String usuario = eliminar.Respuesta;
-            sql.EliminarUsuario(usuario);
+
+            if (!string.IsNullOrEmpty(usuario))
+            {
+                if (usuario != "administrador")
+                {
+                    sql.EliminarUsuario(usuario);
+                }
+                else
+                {
+                    MessageBox.Show("Usuario no válido.");
+                }
+            }
         }
     }
 }

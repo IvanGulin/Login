@@ -101,39 +101,54 @@ namespace Login
             return nombresDeUsuario;
         }
 
-        public void EliminarUsuario(String usuario)
+        public void EliminarUsuario(string usuario)
         {
-            string query = "DELETE FROM Login WHERE NombreUsuario = @Usuario";
+            string queryLogin = "DELETE FROM Login WHERE NombreUsuario = @Usuario";
+            string queryDatosUsuarios = "DELETE FROM DatosUsuarios WHERE NombreUsuario = @Usuario";
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
-            using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@Usuario",usuario);
-
-                try
+                connection.Open();
+                using (SQLiteTransaction transaction = connection.BeginTransaction())
                 {
-                    connection.Open();
-                    int result = command.ExecuteNonQuery(); // Ejecutar el comando de eliminación
+                    try
+                    {
+                        using (SQLiteCommand commandLogin = new SQLiteCommand(queryLogin, connection))
+                        {
+                            commandLogin.Parameters.AddWithValue("@Usuario", usuario);
+                            int resultLogin = commandLogin.ExecuteNonQuery();
 
-                    if (result > 0)
-                    {
-                        MessageBox.Show("Usuario eliminado correctamente.");
+                            // Eliminar de la tabla DatosUsuarios solo si se eliminó algo en Login
+                            if (resultLogin > 0)
+                            {
+                                using (SQLiteCommand commandDatosUsuarios = new SQLiteCommand(queryDatosUsuarios, connection))
+                                {
+                                    commandDatosUsuarios.Parameters.AddWithValue("@Usuario", usuario);
+                                    commandDatosUsuarios.ExecuteNonQuery();
+                                }
+
+                                transaction.Commit();
+                                MessageBox.Show("Usuario eliminado correctamente.");
+                            }
+                            else
+                            {
+                                transaction.Rollback();
+                                MessageBox.Show("No se encontró el usuario.");
+                            }
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("No se encontró el usuario.");
+                        transaction.Rollback();
+                        MessageBox.Show("Error al eliminar el usuario: " + ex.Message);
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
                 }
             }
         }
 
         public DataTable LlenarDataGridView()
         {
-            string query = "SELECT NombreUsuario, Correo FROM DatosUsuarios";
+            string query = "SELECT NombreUsuario FROM Login"; // !TODO arreglar query y borrado
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
