@@ -45,5 +45,10 @@ namespace Login
                 }
             }
         }
+
+        private void btn_MostrarTodosAdmin_Click(object sender, EventArgs e)
+        {
+            sql.MostrarAdmins();
+        }
     }
 }

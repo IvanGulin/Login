@@ -146,9 +146,185 @@ namespace Login
             }
         }
 
+        public bool AddAdmin(string nombreUsuario)
+        {
+            string query = "INSERT INTO Admin VALUES (@NombreUsuario)";
+
+            using (var connection = new SQLiteConnection(connectionString))
+            using (var command = new SQLiteCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+
+                try
+                {
+                    connection.Open();
+                    int result = Convert.ToInt32(command.ExecuteScalar());
+
+                    if (result > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
+                    return false;
+                }
+            }
+        }
+
+        public void EliminarAdmin(string usuario)
+        {
+            string query = "DELETE FROM Admin WHERE NombreUsuario = @Usuario";
+
+            using (var connection = new SQLiteConnection(connectionString))
+            using (var command = new SQLiteCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Usuario", usuario);
+
+                try
+                {
+                    connection.Open();
+                    int result = Convert.ToInt32(command.ExecuteScalar());
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Usuario Administrador borrado correctamente.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
+                }
+            }
+        }
+
+        public void MostrarAdmins()
+        {
+            string query = "SELECT NombreUsuario FROM Admin";
+
+            List<string> nombresDeUsuario = new List<string>();
+
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    connection.Open();
+
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            nombresDeUsuario.Add(reader["NombreUsuario"].ToString());
+                        }
+                    }
+                }
+            }
+
+            foreach (var admin in nombresDeUsuario)
+            {
+                MessageBox.Show(admin);
+            }
+        }
+
+        public bool EsAdmin(string usuario)
+        {
+            string query = "SELECT COUNT(*) FROM Admin WHERE NombreUsuario = @NombreUsuario";
+
+            using (var connection = new SQLiteConnection(connectionString))
+            using (var command = new SQLiteCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@NombreUsuario", usuario);
+
+                try
+                {
+                    connection.Open();
+                    int result = Convert.ToInt32(command.ExecuteScalar());
+
+                    return result > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
+                    return false;
+                }
+            }
+        }
+
+        public List<string> DatosUsuario(string usuario)
+        {
+            string query = "SELECT Nombre, Apellidos, Descripcion, Correo " +
+                "FROM DatosUsuarios WHERE NombreUsuario = @NombreUsuario";
+            List<string> datos = new List<string>();
+
+            using (var connection = new SQLiteConnection(connectionString))
+            using (var command = new SQLiteCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@NombreUsuario", usuario);
+
+                try
+                {
+                    connection.Open();
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                datos.Add(reader["Nombre"].ToString());
+                                datos.Add(reader["Apellidos"].ToString());
+                                datos.Add(reader["Descripcion"].ToString());
+                                datos.Add(reader["Correo"].ToString());
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
+                }
+            }
+
+            return datos;
+        }
+
+        public void AlmacenarDatos(string nombre, string apellidos, string descripcion, string correo, string nombreUsuario)
+        {
+            string query = @"
+            UPDATE DatosUsuarios
+            SET Nombre = @Nombre,
+                Apellidos = @Apellidos,
+                Descripcion = @Descripcion,
+                Correo = @Correo
+            WHERE NombreUsuario = @NombreUsuario";
+
+            using (var connection = new SQLiteConnection(connectionString))
+            using (var command = new SQLiteCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+                command.Parameters.AddWithValue("@Nombre", nombre);
+                command.Parameters.AddWithValue("@Apellidos", apellidos);
+                command.Parameters.AddWithValue("@Descripcion", descripcion);
+                command.Parameters.AddWithValue("@Correo", correo);
+
+                try
+                {
+                    connection.Open();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al actualizar el usuario: " + ex.Message);
+                }
+            }
+        }
+
         public DataTable LlenarDataGridView()
         {
-            string query = "SELECT NombreUsuario FROM Login"; // !TODO arreglar query y borrado
+            string query = "SELECT NombreUsuario, Correo FROM DatosUsuarios";
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             using (SQLiteCommand command = new SQLiteCommand(query, connection))

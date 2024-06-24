@@ -32,6 +32,13 @@ namespace Login
             {
                 if (sql.AddUsuario(entradaUsuario.Text, entradaContraseña.Text, entradaCorreo.Text))
                 {
+                    if (CheckAdmin.Checked)
+                    {
+                        if (sql.AddAdmin(entradaUsuario.Text))
+                        {
+                            MessageBox.Show("Usuario Administrador registrado.");
+                        }
+                    }
                     return true;
                 }
                 else

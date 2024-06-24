@@ -32,6 +32,7 @@
             this.btn_Registrar = new System.Windows.Forms.Button();
             this.btn_MostrarTodosUsuarios = new System.Windows.Forms.Button();
             this.EliminarUsuario = new System.Windows.Forms.Button();
+            this.btn_MostrarTodosAdmin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -90,12 +91,28 @@
             this.EliminarUsuario.UseVisualStyleBackColor = false;
             this.EliminarUsuario.Click += new System.EventHandler(this.EliminarUsuario_Click);
             // 
+            // btn_MostrarTodosAdmin
+            // 
+            this.btn_MostrarTodosAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
+            this.btn_MostrarTodosAdmin.FlatAppearance.BorderSize = 0;
+            this.btn_MostrarTodosAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_MostrarTodosAdmin.Font = new System.Drawing.Font("Perpetua Titling MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MostrarTodosAdmin.ForeColor = System.Drawing.Color.Silver;
+            this.btn_MostrarTodosAdmin.Location = new System.Drawing.Point(270, 236);
+            this.btn_MostrarTodosAdmin.Name = "btn_MostrarTodosAdmin";
+            this.btn_MostrarTodosAdmin.Size = new System.Drawing.Size(135, 69);
+            this.btn_MostrarTodosAdmin.TabIndex = 4;
+            this.btn_MostrarTodosAdmin.Text = "MOSTRAR TODOS LOS ADMIN";
+            this.btn_MostrarTodosAdmin.UseVisualStyleBackColor = false;
+            this.btn_MostrarTodosAdmin.Click += new System.EventHandler(this.btn_MostrarTodosAdmin_Click);
+            // 
             // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Controls.Add(this.btn_MostrarTodosAdmin);
             this.Controls.Add(this.EliminarUsuario);
             this.Controls.Add(this.btn_MostrarTodosUsuarios);
             this.Controls.Add(this.btn_Registrar);
@@ -120,5 +137,6 @@
         private System.Windows.Forms.Button btn_Registrar;
         private System.Windows.Forms.Button btn_MostrarTodosUsuarios;
         private System.Windows.Forms.Button EliminarUsuario;
+        private System.Windows.Forms.Button btn_MostrarTodosAdmin;
     }
 }

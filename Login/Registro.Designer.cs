@@ -39,6 +39,7 @@
             this.botonLogin = new System.Windows.Forms.Button();
             this.entradaContraseña2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.CheckAdmin = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // botonRegistrar
@@ -50,7 +51,7 @@
             this.botonRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonRegistrar.Font = new System.Drawing.Font("Perpetua Titling MT", 14.25F, System.Drawing.FontStyle.Bold);
             this.botonRegistrar.ForeColor = System.Drawing.Color.Silver;
-            this.botonRegistrar.Location = new System.Drawing.Point(177, 338);
+            this.botonRegistrar.Location = new System.Drawing.Point(169, 344);
             this.botonRegistrar.Name = "botonRegistrar";
             this.botonRegistrar.Size = new System.Drawing.Size(139, 44);
             this.botonRegistrar.TabIndex = 12;
@@ -165,12 +166,25 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Confirma Contraseña";
             // 
+            // CheckAdmin
+            // 
+            this.CheckAdmin.AutoSize = true;
+            this.CheckAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckAdmin.ForeColor = System.Drawing.Color.Silver;
+            this.CheckAdmin.Location = new System.Drawing.Point(372, 111);
+            this.CheckAdmin.Name = "CheckAdmin";
+            this.CheckAdmin.Size = new System.Drawing.Size(69, 20);
+            this.CheckAdmin.TabIndex = 17;
+            this.CheckAdmin.Text = "Admin";
+            this.CheckAdmin.UseVisualStyleBackColor = true;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.CheckAdmin);
             this.Controls.Add(this.entradaContraseña2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.botonLogin);
@@ -210,5 +224,6 @@
         private System.Windows.Forms.Button botonLogin;
         private System.Windows.Forms.TextBox entradaContraseña2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox CheckAdmin;
     }
 }

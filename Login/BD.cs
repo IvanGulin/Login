@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using System.Windows.Forms;
 
 namespace Login
 {
@@ -34,7 +35,14 @@ namespace Login
                     NombreUsuario TEXT PRIMARY KEY,
                     Nombre TEXT NULL,
                     Apellidos TEXT NULL,
+                    Descripcion TEXT NULL,
                     Correo TEXT NOT NULL,
+                    FOREIGN KEY (NombreUsuario) REFERENCES Login (NombreUsuario)
+                )";
+
+                string createAdminTable = @"
+                CREATE TABLE IF NOT EXISTS Admin (
+                    NombreUsuario TEXT PRIMARY KEY,
                     FOREIGN KEY (NombreUsuario) REFERENCES Login (NombreUsuario)
                 )";
 
@@ -44,6 +52,11 @@ namespace Login
                 }
 
                 using (var command = new SQLiteCommand(createDatosUsuariosTable, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+
+                using (var command = new SQLiteCommand(createAdminTable, connection))
                 {
                     command.ExecuteNonQuery();
                 }

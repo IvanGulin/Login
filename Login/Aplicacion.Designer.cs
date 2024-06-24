@@ -40,7 +40,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(301, 85);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(293, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 47);
             this.label1.TabIndex = 0;
@@ -48,7 +49,7 @@
             // 
             // entradaCiudad
             // 
-            this.entradaCiudad.Location = new System.Drawing.Point(309, 221);
+            this.entradaCiudad.Location = new System.Drawing.Point(301, 221);
             this.entradaCiudad.Name = "entradaCiudad";
             this.entradaCiudad.Size = new System.Drawing.Size(171, 20);
             this.entradaCiudad.TabIndex = 1;
@@ -57,27 +58,36 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(340, 205);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(311, 202);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 13);
+            this.label2.Size = new System.Drawing.Size(152, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre de la ciudad";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(486, 221);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(120)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(478, 214);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 20);
+            this.button1.Size = new System.Drawing.Size(75, 34);
             this.button1.TabIndex = 3;
             this.button1.Text = "Entrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // LabelTemperatura
             // 
             this.LabelTemperatura.AutoSize = true;
             this.LabelTemperatura.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTemperatura.Location = new System.Drawing.Point(232, 277);
+            this.LabelTemperatura.ForeColor = System.Drawing.Color.White;
+            this.LabelTemperatura.Location = new System.Drawing.Point(224, 277);
             this.LabelTemperatura.Name = "LabelTemperatura";
             this.LabelTemperatura.Size = new System.Drawing.Size(65, 20);
             this.LabelTemperatura.TabIndex = 6;
@@ -88,6 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.LabelTemperatura);
             this.Controls.Add(this.button1);

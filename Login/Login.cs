@@ -6,7 +6,6 @@ namespace Login
     public partial class Login : Form
     {
         private ClaseSQL sql = new ClaseSQL();
-        private String usuario;
         public Login()
         {
             InitializeComponent();
@@ -47,7 +46,7 @@ namespace Login
 
         private void ComprobarAdmin()
         {
-            if (entradaUsuario.Text.Equals("administrador"))
+            if (entradaUsuario.Text.Equals("administrador") || sql.EsAdmin(entradaUsuario.Text))
             {
                 MessageBox.Show("Menú administrador.");
                 MenuAdmin menu = new MenuAdmin();
@@ -58,10 +57,10 @@ namespace Login
             else
             {
                 MessageBox.Show("Acceso concedido.");
-                Aplicacion aplicacion = new Aplicacion();
+                PerfilUsuario perfil = new PerfilUsuario(entradaUsuario.Text);
                 Hide();
-                aplicacion.Show();
-                aplicacion.FormClosed += (s, args) => Show();
+                perfil.Show();
+                perfil.FormClosed += (s, args) => Show();
             }
         }
 

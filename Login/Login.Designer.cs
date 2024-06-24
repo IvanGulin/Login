@@ -35,16 +35,14 @@
             this.entradaContraseña = new System.Windows.Forms.TextBox();
             this.botonEntrar = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelUsuario
             // 
             this.labelUsuario.AutoSize = true;
             this.labelUsuario.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelUsuario.ForeColor = System.Drawing.Color.White;
             this.labelUsuario.Location = new System.Drawing.Point(205, 164);
             this.labelUsuario.Name = "labelUsuario";
             this.labelUsuario.Size = new System.Drawing.Size(71, 21);
@@ -55,7 +53,7 @@
             // 
             this.labelContraseña.AutoSize = true;
             this.labelContraseña.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContraseña.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelContraseña.ForeColor = System.Drawing.Color.White;
             this.labelContraseña.Location = new System.Drawing.Point(195, 265);
             this.labelContraseña.Name = "labelContraseña";
             this.labelContraseña.Size = new System.Drawing.Size(99, 21);
@@ -89,7 +87,7 @@
             this.botonEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(120)))));
             this.botonEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonEntrar.Font = new System.Drawing.Font("Perpetua Titling MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonEntrar.ForeColor = System.Drawing.Color.Silver;
+            this.botonEntrar.ForeColor = System.Drawing.Color.White;
             this.botonEntrar.Location = new System.Drawing.Point(187, 312);
             this.botonEntrar.Name = "botonEntrar";
             this.botonEntrar.Size = new System.Drawing.Size(107, 44);
@@ -101,22 +99,12 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Login.Properties.Resources.image_processing20191128_24941_zbq3ty;
-            this.pictureBox2.Location = new System.Drawing.Point(131, 1);
+            this.pictureBox2.Location = new System.Drawing.Point(88, -13);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(219, 177);
+            this.pictureBox2.Size = new System.Drawing.Size(301, 244);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Login.Properties.Resources.loading_thinking;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 78);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // Login
             // 
@@ -127,7 +115,6 @@
             this.Controls.Add(this.entradaUsuario);
             this.Controls.Add(this.labelUsuario);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.botonEntrar);
             this.Controls.Add(this.entradaContraseña);
             this.Controls.Add(this.labelContraseña);
@@ -140,7 +127,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,7 +139,6 @@
         private System.Windows.Forms.TextBox entradaUsuario;
         private System.Windows.Forms.TextBox entradaContraseña;
         private System.Windows.Forms.Button botonEntrar;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
