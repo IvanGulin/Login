@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.labelNombreUsuario = new System.Windows.Forms.Label();
-            this.FotoUsuario = new System.Windows.Forms.PictureBox();
             this.labelEditarPerfil = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +41,9 @@
             this.tbDescripcion = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnTemperaturas = new System.Windows.Forms.Button();
+            this.pbEditar = new System.Windows.Forms.PictureBox();
+            this.FotoUsuario = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FotoUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,16 +57,6 @@
             this.labelNombreUsuario.Size = new System.Drawing.Size(50, 16);
             this.labelNombreUsuario.TabIndex = 0;
             this.labelNombreUsuario.Text = "label1";
-            // 
-            // FotoUsuario
-            // 
-            this.FotoUsuario.Image = global::Login.Properties.Resources.fotoUsuario_removebg_preview;
-            this.FotoUsuario.Location = new System.Drawing.Point(113, 65);
-            this.FotoUsuario.Name = "FotoUsuario";
-            this.FotoUsuario.Size = new System.Drawing.Size(95, 95);
-            this.FotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.FotoUsuario.TabIndex = 1;
-            this.FotoUsuario.TabStop = false;
             // 
             // labelEditarPerfil
             // 
@@ -211,12 +203,35 @@
             this.btnTemperaturas.UseVisualStyleBackColor = false;
             this.btnTemperaturas.Click += new System.EventHandler(this.btnTemperaturas_Click);
             // 
+            // pbEditar
+            // 
+            this.pbEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEditar.Image = global::Login.Properties.Resources.iconoEditar;
+            this.pbEditar.Location = new System.Drawing.Point(88, 137);
+            this.pbEditar.Name = "pbEditar";
+            this.pbEditar.Size = new System.Drawing.Size(24, 23);
+            this.pbEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbEditar.TabIndex = 19;
+            this.pbEditar.TabStop = false;
+            this.pbEditar.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // FotoUsuario
+            // 
+            this.FotoUsuario.Image = global::Login.Properties.Resources.fotoUsuario_removebg_preview;
+            this.FotoUsuario.Location = new System.Drawing.Point(113, 65);
+            this.FotoUsuario.Name = "FotoUsuario";
+            this.FotoUsuario.Size = new System.Drawing.Size(95, 95);
+            this.FotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.FotoUsuario.TabIndex = 1;
+            this.FotoUsuario.TabStop = false;
+            // 
             // PerfilUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 411);
+            this.Controls.Add(this.pbEditar);
             this.Controls.Add(this.btnTemperaturas);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.tbDescripcion);
@@ -232,9 +247,12 @@
             this.Controls.Add(this.FotoUsuario);
             this.Controls.Add(this.labelNombreUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximumSize = new System.Drawing.Size(800, 450);
+            this.MinimumSize = new System.Drawing.Size(800, 450);
             this.Name = "PerfilUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Perfil ";
+            ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FotoUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -257,5 +275,6 @@
         private System.Windows.Forms.TextBox tbDescripcion;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnTemperaturas;
+        private System.Windows.Forms.PictureBox pbEditar;
     }
 }

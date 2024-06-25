@@ -1,10 +1,8 @@
 ﻿using Login.Properties;
+using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using static System.Windows.Forms.LinkLabel;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Login
 {
@@ -14,12 +12,16 @@ namespace Login
         private ClaseSQL sql = new ClaseSQL();
         private List<string> datos;
         private string nombre, apellidos, correo, descripcion = "-";
+        private byte imagen;
         private Usuarios usuario;
+        private System.Windows.Forms.ImageList listaImagenes = new ImageList();
+        private ElegirImagen elegirImagen = new ElegirImagen();
 
         public PerfilUsuario(string nombreUsuario)
         {
             InitializeComponent();
             this.nombreUsuario = nombreUsuario;
+            listaImagenes = elegirImagen.GetListImage();
 
             SerializarUsuario();
             LlenarDatos();
@@ -33,24 +35,24 @@ namespace Login
 
             foreach (var dato in datos)
             {
-                if (!dato.Equals(""))
+                switch (cont)
                 {
-                    switch (cont)
-                    {
-                        case 0: nombre = dato.ToString();
-                            break;
-                        case 1: apellidos = dato.ToString(); 
-                            break;
-                        case 2: descripcion = dato.ToString();
-                            break;
-                        case 3: correo = dato.ToString();
-                            break;
-                    }
+                    case 0: nombre = dato.ToString();
+                        break;
+                    case 1: apellidos = dato.ToString(); 
+                        break;
+                    case 2: descripcion = dato.ToString();
+                        break;
+                    case 3: correo = dato.ToString();
+                        break;
+                    case 4: 
+                        if (dato.Equals("")) imagen = 0;
+                        else imagen = Convert.ToByte(dato);
+                        break;
                 }
                 cont++;
             }
-
-            this.usuario = new Usuarios(nombre, apellidos, descripcion, Resources.fotoUsuario_removebg_preview);
+            this.usuario = new Usuarios(nombre, apellidos, descripcion, imagen);
         }
 
         private void LlenarDatos()
@@ -61,6 +63,15 @@ namespace Login
             tbNombre.Text = nombre;
             tbApellidos.Text = apellidos;
             tbCorreo.Text = correo;
+
+            if (imagen == 0)
+            {
+                FotoUsuario.Image = Resources.fotoUsuario_removebg_preview;
+            }
+            else
+            {
+                CambiarImagen();
+            }
         }
 
         private void DeshabilitarEdicion()
@@ -71,6 +82,8 @@ namespace Login
             tbCorreo.Enabled = false;
             btnCerrar.Visible = false;
             btnCerrar.Enabled = false;
+            pbEditar.Enabled = false;
+            pbEditar.Visible = false;
         }
 
         private void tbDescripcion_TextChanged(object sender, System.EventArgs e)
@@ -85,6 +98,27 @@ namespace Login
             }
         }
 
+        private void pictureBox1_Click(object sender, System.EventArgs e)
+        {
+            elegirImagen.ShowDialog();
+            imagen = elegirImagen.ImagenSeleccionada;
+
+            sql.AlmacenarImagen(imagen, nombreUsuario);
+            CambiarImagen();
+        }
+
+        private void CambiarImagen()
+        {
+            if (imagen >= 0 && imagen < listaImagenes.Images.Count)
+            {
+                FotoUsuario.Image = listaImagenes.Images[imagen];
+            }
+            else
+            {
+                MessageBox.Show("El índice de la imagen es inválido.");
+            }
+        }
+
         private void labelEditarPerfil_Click(object sender, System.EventArgs e)
         {
             tbDescripcion.Enabled = true;
@@ -95,6 +129,8 @@ namespace Login
             btnCerrar.Enabled = true;
             btnTemperaturas.Enabled = false;
             btnTemperaturas.Visible = false;
+            pbEditar.Enabled = true;
+            pbEditar.Visible = true;
         }
 
         private void btnCerrar_Click(object sender, System.EventArgs e)
@@ -102,7 +138,7 @@ namespace Login
             DeshabilitarEdicion();
             btnTemperaturas.Enabled = true;
             btnTemperaturas.Visible = true;
-            sql.AlmacenarDatos(tbNombre.Text, tbApellidos.Text, tbDescripcion.Text, tbCorreo.Text, nombreUsuario);
+            sql.AlmacenarDatos(tbNombre.Text, tbApellidos.Text, tbDescripcion.Text, tbCorreo.Text, nombreUsuario, imagen);
         }
 
         private void btnTemperaturas_Click(object sender, System.EventArgs e)

@@ -50,7 +50,7 @@
             this.botonRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(120)))));
             this.botonRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonRegistrar.Font = new System.Drawing.Font("Perpetua Titling MT", 14.25F, System.Drawing.FontStyle.Bold);
-            this.botonRegistrar.ForeColor = System.Drawing.Color.Silver;
+            this.botonRegistrar.ForeColor = System.Drawing.Color.White;
             this.botonRegistrar.Location = new System.Drawing.Point(169, 344);
             this.botonRegistrar.Name = "botonRegistrar";
             this.botonRegistrar.Size = new System.Drawing.Size(139, 44);

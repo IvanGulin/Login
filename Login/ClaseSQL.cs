@@ -257,7 +257,7 @@ namespace Login
 
         public List<string> DatosUsuario(string usuario)
         {
-            string query = "SELECT Nombre, Apellidos, Descripcion, Correo " +
+            string query = "SELECT Nombre, Apellidos, Descripcion, Correo, Imagen " +
                 "FROM DatosUsuarios WHERE NombreUsuario = @NombreUsuario";
             List<string> datos = new List<string>();
 
@@ -279,6 +279,7 @@ namespace Login
                                 datos.Add(reader["Apellidos"].ToString());
                                 datos.Add(reader["Descripcion"].ToString());
                                 datos.Add(reader["Correo"].ToString());
+                                datos.Add(reader["Imagen"].ToString());
                             }
                         }
                     }
@@ -292,14 +293,15 @@ namespace Login
             return datos;
         }
 
-        public void AlmacenarDatos(string nombre, string apellidos, string descripcion, string correo, string nombreUsuario)
+        public void AlmacenarDatos(string nombre, string apellidos, string descripcion, string correo, string nombreUsuario, byte imagen)
         {
             string query = @"
             UPDATE DatosUsuarios
             SET Nombre = @Nombre,
                 Apellidos = @Apellidos,
                 Descripcion = @Descripcion,
-                Correo = @Correo
+                Correo = @Correo,
+                Imagen = @Imagen
             WHERE NombreUsuario = @NombreUsuario";
 
             using (var connection = new SQLiteConnection(connectionString))
@@ -310,10 +312,37 @@ namespace Login
                 command.Parameters.AddWithValue("@Apellidos", apellidos);
                 command.Parameters.AddWithValue("@Descripcion", descripcion);
                 command.Parameters.AddWithValue("@Correo", correo);
+                command.Parameters.AddWithValue("@Imagen", imagen);
 
                 try
                 {
                     connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al actualizar el usuario: " + ex.Message);
+                }
+            }
+        }
+
+        public void AlmacenarImagen(byte imagen, string nombreUsuario)
+        {
+            string query = @"
+            UPDATE DatosUsuarios
+            SET Imagen = @Imagen
+            WHERE NombreUsuario = @NombreUsuario";
+
+            using (var connection = new SQLiteConnection(connectionString))
+            using (var command = new SQLiteCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+                command.Parameters.AddWithValue("@Imagen", imagen); 
+
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {

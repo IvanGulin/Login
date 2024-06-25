@@ -37,6 +37,7 @@ namespace Login
                     Apellidos TEXT NULL,
                     Descripcion TEXT NULL,
                     Correo TEXT NOT NULL,
+                    Imagen INTEGER NULL,
                     FOREIGN KEY (NombreUsuario) REFERENCES Login (NombreUsuario)
                 )";
 

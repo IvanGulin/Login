@@ -62,6 +62,12 @@
     </Compile>
     <Compile Include="BD.cs" />
     <Compile Include="ClaseSQL.cs" />
+    <Compile Include="ElegirImagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ElegirImagen.Designer.cs">
+      <DependentUpon>ElegirImagen.cs</DependentUpon>
+    </Compile>
     <Compile Include="EliminaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     <Compile Include="Usuarios.cs" />
     <EmbeddedResource Include="Aplicacion.resx">
       <DependentUpon>Aplicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElegirImagen.resx">
+      <DependentUpon>ElegirImagen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminaUsuario.resx">
       <DependentUpon>EliminaUsuario.cs</DependentUpon>
@@ -159,6 +168,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Imagenes\fotoUsuario-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\iconoEditar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GHNvOJjXgAADYA3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01df25dafda85184928dbc4a74bf75d4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3e441b34d1c0661c68779e3cec30e08a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18a7411f890ac755464a59fe05e93145.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2762cc7e6b9720ba3dafdb36a623e804.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\825855e61bd9052c1bd3723b24b8ee0d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\085546297bcf5c6c8f7acba79dd69964.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cd9ad3c5877fa45171c9fb7885ec8bd06d5325e6_full.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cf241c611167e9ae25841ffcd64194ee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d4e9540a88240dc73209eb0a6cb36958.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E1OH4kaXEAMJIHn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E4a1TdSXEAcE7AV.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E6F2MlmXsAMQTCI.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EbUqQGjWoAA5NeU.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\F9RTVTTWAAAtaD2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />

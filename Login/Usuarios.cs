@@ -10,7 +10,7 @@ namespace Login
         private string descripcion;
         private string apellidos;
         private string nombre;
-        private Image imagen;
+        private byte imagen;
 
         public Usuarios(string nombreUsuario, string password, string correo)
         {
@@ -19,7 +19,7 @@ namespace Login
             this.correo = correo;
         }
 
-        public Usuarios(string nombre, string apellidos, string descripcion, Image imagen)
+        public Usuarios(string nombre, string apellidos, string descripcion, byte imagen)
         {
             this.nombre = nombre;
             this.apellidos = apellidos;
@@ -33,6 +33,6 @@ namespace Login
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public string Apellidos { get => apellidos; set => apellidos = value; }
         public string Nombre { get => nombre; set => nombre = value; }
-        public Image Imagen { get => imagen; set => imagen = value; }
+        public byte Imagen { get => imagen; set => imagen = value; }
     }
 }
