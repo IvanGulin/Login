@@ -84,6 +84,7 @@ namespace Login
             btnCerrar.Enabled = false;
             pbEditar.Enabled = false;
             pbEditar.Visible = false;
+            labelEditarPerfil.Cursor = Cursors.Hand;
         }
 
         private void tbDescripcion_TextChanged(object sender, System.EventArgs e)
@@ -127,17 +128,14 @@ namespace Login
             tbCorreo.Enabled = true;
             btnCerrar.Visible = true;
             btnCerrar.Enabled = true;
-            btnTemperaturas.Enabled = false;
-            btnTemperaturas.Visible = false;
             pbEditar.Enabled = true;
             pbEditar.Visible = true;
+            labelEditarPerfil.Cursor = Cursors.Default;
         }
 
         private void btnCerrar_Click(object sender, System.EventArgs e)
         {
             DeshabilitarEdicion();
-            btnTemperaturas.Enabled = true;
-            btnTemperaturas.Visible = true;
             sql.AlmacenarDatos(tbNombre.Text, tbApellidos.Text, tbDescripcion.Text, tbCorreo.Text, nombreUsuario, imagen);
         }
 

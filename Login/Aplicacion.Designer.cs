@@ -41,7 +41,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(293, 85);
+            this.label1.Location = new System.Drawing.Point(204, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 47);
             this.label1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             // entradaCiudad
             // 
-            this.entradaCiudad.Location = new System.Drawing.Point(301, 221);
+            this.entradaCiudad.Location = new System.Drawing.Point(212, 206);
             this.entradaCiudad.Name = "entradaCiudad";
             this.entradaCiudad.Size = new System.Drawing.Size(171, 20);
             this.entradaCiudad.TabIndex = 1;
@@ -60,7 +60,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(311, 202);
+            this.label2.Location = new System.Drawing.Point(222, 187);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(152, 16);
             this.label2.TabIndex = 2;
@@ -74,7 +74,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(478, 214);
+            this.button1.Location = new System.Drawing.Point(389, 199);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 34);
             this.button1.TabIndex = 3;
@@ -87,7 +87,7 @@
             this.LabelTemperatura.AutoSize = true;
             this.LabelTemperatura.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelTemperatura.ForeColor = System.Drawing.Color.White;
-            this.LabelTemperatura.Location = new System.Drawing.Point(224, 277);
+            this.LabelTemperatura.Location = new System.Drawing.Point(135, 262);
             this.LabelTemperatura.Name = "LabelTemperatura";
             this.LabelTemperatura.Size = new System.Drawing.Size(65, 20);
             this.LabelTemperatura.TabIndex = 6;

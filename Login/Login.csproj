@@ -92,6 +92,12 @@
     <Compile Include="MenuAdmin.Designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="PerfilUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PerfilUsuario.resx">
       <DependentUpon>PerfilUsuario.cs</DependentUpon>
@@ -216,6 +225,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\F9RTVTTWAAAtaD2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\editar-perfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Weather.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\minimize-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\arriba-a-la-izquierda.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />

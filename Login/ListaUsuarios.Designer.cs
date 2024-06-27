@@ -38,24 +38,24 @@
             this.dataGridViewUsuarios.AllowUserToDeleteRows = false;
             this.dataGridViewUsuarios.AllowUserToOrderColumns = true;
             this.dataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsuarios.Location = new System.Drawing.Point(17, 2);
+            this.dataGridViewUsuarios.Location = new System.Drawing.Point(1, 1);
             this.dataGridViewUsuarios.Name = "dataGridViewUsuarios";
             this.dataGridViewUsuarios.ReadOnly = true;
             this.dataGridViewUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUsuarios.Size = new System.Drawing.Size(348, 357);
+            this.dataGridViewUsuarios.Size = new System.Drawing.Size(281, 357);
             this.dataGridViewUsuarios.TabIndex = 0;
             // 
             // ListaUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 361);
+            this.ClientSize = new System.Drawing.Size(284, 361);
             this.Controls.Add(this.dataGridViewUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(400, 400);
+            this.MaximumSize = new System.Drawing.Size(300, 400);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(400, 400);
+            this.MinimumSize = new System.Drawing.Size(300, 400);
             this.Name = "ListaUsuarios";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

@@ -40,7 +40,6 @@
             this.tbCorreo = new System.Windows.Forms.TextBox();
             this.tbDescripcion = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnTemperaturas = new System.Windows.Forms.Button();
             this.pbEditar = new System.Windows.Forms.PictureBox();
             this.FotoUsuario = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditar)).BeginInit();
@@ -52,7 +51,7 @@
             this.labelNombreUsuario.AutoSize = true;
             this.labelNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombreUsuario.ForeColor = System.Drawing.Color.White;
-            this.labelNombreUsuario.Location = new System.Drawing.Point(242, 65);
+            this.labelNombreUsuario.Location = new System.Drawing.Point(165, 36);
             this.labelNombreUsuario.Name = "labelNombreUsuario";
             this.labelNombreUsuario.Size = new System.Drawing.Size(50, 16);
             this.labelNombreUsuario.TabIndex = 0;
@@ -63,7 +62,7 @@
             this.labelEditarPerfil.AutoSize = true;
             this.labelEditarPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelEditarPerfil.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.labelEditarPerfil.Location = new System.Drawing.Point(133, 163);
+            this.labelEditarPerfil.Location = new System.Drawing.Point(56, 134);
             this.labelEditarPerfil.Name = "labelEditarPerfil";
             this.labelEditarPerfil.Size = new System.Drawing.Size(59, 13);
             this.labelEditarPerfil.TabIndex = 2;
@@ -75,7 +74,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(242, 101);
+            this.label2.Location = new System.Drawing.Point(165, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 3;
@@ -86,7 +85,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(242, 188);
+            this.label3.Location = new System.Drawing.Point(165, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 16);
             this.label3.TabIndex = 5;
@@ -97,7 +96,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(242, 265);
+            this.label4.Location = new System.Drawing.Point(165, 236);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 11;
@@ -108,7 +107,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(242, 239);
+            this.label5.Location = new System.Drawing.Point(165, 210);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 10;
@@ -119,7 +118,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(242, 214);
+            this.label6.Location = new System.Drawing.Point(165, 185);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 9;
@@ -130,7 +129,7 @@
             this.tbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
             this.tbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbNombre.ForeColor = System.Drawing.Color.White;
-            this.tbNombre.Location = new System.Drawing.Point(297, 215);
+            this.tbNombre.Location = new System.Drawing.Point(220, 186);
             this.tbNombre.MaxLength = 25;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(294, 13);
@@ -141,7 +140,7 @@
             this.tbApellidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
             this.tbApellidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbApellidos.ForeColor = System.Drawing.Color.White;
-            this.tbApellidos.Location = new System.Drawing.Point(306, 240);
+            this.tbApellidos.Location = new System.Drawing.Point(229, 211);
             this.tbApellidos.MaxLength = 40;
             this.tbApellidos.Name = "tbApellidos";
             this.tbApellidos.Size = new System.Drawing.Size(285, 13);
@@ -152,7 +151,7 @@
             this.tbCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
             this.tbCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbCorreo.ForeColor = System.Drawing.Color.White;
-            this.tbCorreo.Location = new System.Drawing.Point(292, 266);
+            this.tbCorreo.Location = new System.Drawing.Point(215, 237);
             this.tbCorreo.MaxLength = 50;
             this.tbCorreo.Name = "tbCorreo";
             this.tbCorreo.Size = new System.Drawing.Size(299, 13);
@@ -163,7 +162,7 @@
             this.tbDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
             this.tbDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbDescripcion.ForeColor = System.Drawing.Color.White;
-            this.tbDescripcion.Location = new System.Drawing.Point(245, 121);
+            this.tbDescripcion.Location = new System.Drawing.Point(168, 92);
             this.tbDescripcion.MaxLength = 200;
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
@@ -179,7 +178,7 @@
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(613, 65);
+            this.btnCerrar.Location = new System.Drawing.Point(536, 36);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(43, 37);
             this.btnCerrar.TabIndex = 16;
@@ -187,27 +186,11 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // btnTemperaturas
-            // 
-            this.btnTemperaturas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.btnTemperaturas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTemperaturas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
-            this.btnTemperaturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTemperaturas.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTemperaturas.ForeColor = System.Drawing.Color.White;
-            this.btnTemperaturas.Location = new System.Drawing.Point(557, 206);
-            this.btnTemperaturas.Name = "btnTemperaturas";
-            this.btnTemperaturas.Size = new System.Drawing.Size(165, 54);
-            this.btnTemperaturas.TabIndex = 18;
-            this.btnTemperaturas.Text = "Ver Temperaturas";
-            this.btnTemperaturas.UseVisualStyleBackColor = false;
-            this.btnTemperaturas.Click += new System.EventHandler(this.btnTemperaturas_Click);
-            // 
             // pbEditar
             // 
             this.pbEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbEditar.Image = global::Login.Properties.Resources.iconoEditar;
-            this.pbEditar.Location = new System.Drawing.Point(88, 137);
+            this.pbEditar.Image = global::Login.Properties.Resources.editar_perfil;
+            this.pbEditar.Location = new System.Drawing.Point(11, 36);
             this.pbEditar.Name = "pbEditar";
             this.pbEditar.Size = new System.Drawing.Size(24, 23);
             this.pbEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -218,7 +201,7 @@
             // FotoUsuario
             // 
             this.FotoUsuario.Image = global::Login.Properties.Resources.fotoUsuario_removebg_preview;
-            this.FotoUsuario.Location = new System.Drawing.Point(113, 65);
+            this.FotoUsuario.Location = new System.Drawing.Point(36, 36);
             this.FotoUsuario.Name = "FotoUsuario";
             this.FotoUsuario.Size = new System.Drawing.Size(95, 95);
             this.FotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -232,7 +215,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(784, 411);
             this.Controls.Add(this.pbEditar);
-            this.Controls.Add(this.btnTemperaturas);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.tbDescripcion);
             this.Controls.Add(this.tbCorreo);
@@ -274,7 +256,6 @@
         private System.Windows.Forms.TextBox tbCorreo;
         private System.Windows.Forms.TextBox tbDescripcion;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnTemperaturas;
         private System.Windows.Forms.PictureBox pbEditar;
     }
 }
