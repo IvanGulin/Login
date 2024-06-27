@@ -93,16 +93,6 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fotoUsuario {
-            get {
-                object obj = ResourceManager.GetObject("fotoUsuario", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap fotoUsuario_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("fotoUsuario-removebg-preview", resourceCulture);

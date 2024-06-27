@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.panelForm = new System.Windows.Forms.Panel();
             this.panelBotones = new System.Windows.Forms.Panel();
             this.pb_Weather = new System.Windows.Forms.PictureBox();
@@ -123,7 +124,7 @@
             // 
             this.pb_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_Logout.Image = global::Login.Properties.Resources.Logout;
-            this.pb_Logout.Location = new System.Drawing.Point(24, 0);
+            this.pb_Logout.Location = new System.Drawing.Point(24, 14);
             this.pb_Logout.Name = "pb_Logout";
             this.pb_Logout.Size = new System.Drawing.Size(50, 50);
             this.pb_Logout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -264,6 +265,7 @@
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.panelBotones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(950, 600);
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "MenuPrincipal";

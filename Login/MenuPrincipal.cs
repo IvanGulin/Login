@@ -61,13 +61,11 @@ namespace Login
 
         private new void MouseEnter(PictureBox pb)
         {
-            pb.BackColor = Color.FromArgb(42, 40, 70);
             pb.Size = new Size(60, 60);
         }
 
         private new void MouseLeave(PictureBox pb)
-        {
-            pb.BackColor = Color.FromArgb(42, 40, 51);
+        {   
             pb.Size = new Size(50, 50);
         }
 

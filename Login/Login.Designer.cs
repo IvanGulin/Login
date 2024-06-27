@@ -36,15 +36,15 @@
             this.botonEntrar = new System.Windows.Forms.Button();
             this.panelVentana = new System.Windows.Forms.Panel();
             this.panelMinimizar = new System.Windows.Forms.Panel();
-            this.panelCerrar = new System.Windows.Forms.Panel();
-            this.labelVentana = new System.Windows.Forms.Label();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
+            this.panelCerrar = new System.Windows.Forms.Panel();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
+            this.labelVentana = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelVentana.SuspendLayout();
             this.panelMinimizar.SuspendLayout();
-            this.panelCerrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
+            this.panelCerrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -114,7 +114,7 @@
             this.panelVentana.Controls.Add(this.panelCerrar);
             this.panelVentana.Location = new System.Drawing.Point(1, 1);
             this.panelVentana.Name = "panelVentana";
-            this.panelVentana.Size = new System.Drawing.Size(499, 30);
+            this.panelVentana.Size = new System.Drawing.Size(498, 30);
             this.panelVentana.TabIndex = 9;
             this.panelVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelVentana_MouseDown);
             this.panelVentana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelVentana_MouseMove);
@@ -132,33 +132,6 @@
             this.panelMinimizar.MouseEnter += new System.EventHandler(this.panelMinimizar_MouseEnter);
             this.panelMinimizar.MouseLeave += new System.EventHandler(this.panelMinimizar_MouseLeave);
             // 
-            // panelCerrar
-            // 
-            this.panelCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
-            this.panelCerrar.Controls.Add(this.pbCerrar);
-            this.panelCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelCerrar.Location = new System.Drawing.Point(468, 0);
-            this.panelCerrar.Name = "panelCerrar";
-            this.panelCerrar.Size = new System.Drawing.Size(30, 30);
-            this.panelCerrar.TabIndex = 10;
-            this.panelCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
-            this.panelCerrar.MouseEnter += new System.EventHandler(this.panelCerrar_MouseEnter);
-            this.panelCerrar.MouseLeave += new System.EventHandler(this.panelCerrar_MouseLeave);
-            // 
-            // labelVentana
-            // 
-            this.labelVentana.AutoSize = true;
-            this.labelVentana.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVentana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.labelVentana.Location = new System.Drawing.Point(224, 12);
-            this.labelVentana.Name = "labelVentana";
-            this.labelVentana.Size = new System.Drawing.Size(38, 11);
-            this.labelVentana.TabIndex = 12;
-            this.labelVentana.Text = "LOGIN";
-            this.labelVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelVentana_MouseDown);
-            this.labelVentana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelVentana_MouseMove);
-            this.labelVentana.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelVentana_MouseUp);
-            // 
             // pbMinimizar
             // 
             this.pbMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -173,6 +146,19 @@
             this.pbMinimizar.MouseEnter += new System.EventHandler(this.panelMinimizar_MouseEnter);
             this.pbMinimizar.MouseLeave += new System.EventHandler(this.panelMinimizar_MouseLeave);
             // 
+            // panelCerrar
+            // 
+            this.panelCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
+            this.panelCerrar.Controls.Add(this.pbCerrar);
+            this.panelCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelCerrar.Location = new System.Drawing.Point(468, 0);
+            this.panelCerrar.Name = "panelCerrar";
+            this.panelCerrar.Size = new System.Drawing.Size(30, 30);
+            this.panelCerrar.TabIndex = 10;
+            this.panelCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
+            this.panelCerrar.MouseEnter += new System.EventHandler(this.panelCerrar_MouseEnter);
+            this.panelCerrar.MouseLeave += new System.EventHandler(this.panelCerrar_MouseLeave);
+            // 
             // pbCerrar
             // 
             this.pbCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -186,6 +172,20 @@
             this.pbCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
             this.pbCerrar.MouseEnter += new System.EventHandler(this.panelCerrar_MouseEnter);
             this.pbCerrar.MouseLeave += new System.EventHandler(this.panelCerrar_MouseLeave);
+            // 
+            // labelVentana
+            // 
+            this.labelVentana.AutoSize = true;
+            this.labelVentana.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVentana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.labelVentana.Location = new System.Drawing.Point(224, 12);
+            this.labelVentana.Name = "labelVentana";
+            this.labelVentana.Size = new System.Drawing.Size(38, 11);
+            this.labelVentana.TabIndex = 12;
+            this.labelVentana.Text = "LOGIN";
+            this.labelVentana.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelVentana_MouseDown);
+            this.labelVentana.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelVentana_MouseMove);
+            this.labelVentana.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelVentana_MouseUp);
             // 
             // pictureBox2
             // 
@@ -221,8 +221,8 @@
             this.Text = "Login";
             this.panelVentana.ResumeLayout(false);
             this.panelMinimizar.ResumeLayout(false);
-            this.panelCerrar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
+            this.panelCerrar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
