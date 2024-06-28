@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
-            this.panelForm = new System.Windows.Forms.Panel();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.pb_MenuAdmin = new System.Windows.Forms.PictureBox();
+            this.pb_Logros = new System.Windows.Forms.PictureBox();
             this.pb_Weather = new System.Windows.Forms.PictureBox();
             this.pb_Perfil = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,7 +45,13 @@
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.panelCerrar = new System.Windows.Forms.Panel();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
+            this.labelLogros = new System.Windows.Forms.Label();
+            this.panelForm = new System.Windows.Forms.Panel();
+            this.panelLogros = new System.Windows.Forms.Panel();
+            this.labelAdmin = new System.Windows.Forms.Label();
             this.panelBotones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_MenuAdmin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Logros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Weather)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Perfil)).BeginInit();
             this.panel1.SuspendLayout();
@@ -56,24 +63,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelForm
-            // 
-            this.panelForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
-            this.panelForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelForm.Location = new System.Drawing.Point(125, 47);
-            this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(663, 441);
-            this.panelForm.TabIndex = 0;
-            // 
             // panelBotones
             // 
             this.panelBotones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
             this.panelBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBotones.Controls.Add(this.pb_MenuAdmin);
+            this.panelBotones.Controls.Add(this.pb_Logros);
             this.panelBotones.Controls.Add(this.pb_Weather);
             this.panelBotones.Controls.Add(this.pb_Perfil);
             this.panelBotones.Controls.Add(this.panel1);
@@ -81,6 +78,34 @@
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(97, 441);
             this.panelBotones.TabIndex = 1;
+            // 
+            // pb_MenuAdmin
+            // 
+            this.pb_MenuAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_MenuAdmin.Image = global::Login.Properties.Resources.administracion;
+            this.pb_MenuAdmin.Location = new System.Drawing.Point(24, 240);
+            this.pb_MenuAdmin.Name = "pb_MenuAdmin";
+            this.pb_MenuAdmin.Size = new System.Drawing.Size(50, 50);
+            this.pb_MenuAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_MenuAdmin.TabIndex = 12;
+            this.pb_MenuAdmin.TabStop = false;
+            this.pb_MenuAdmin.Click += new System.EventHandler(this.pb_MenuAdmin_Click);
+            this.pb_MenuAdmin.MouseEnter += new System.EventHandler(this.pb_Admin_MouseEnter);
+            this.pb_MenuAdmin.MouseLeave += new System.EventHandler(this.pb_Admin_MouseLeave);
+            // 
+            // pb_Logros
+            // 
+            this.pb_Logros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_Logros.Image = global::Login.Properties.Resources.premio;
+            this.pb_Logros.Location = new System.Drawing.Point(24, 158);
+            this.pb_Logros.Name = "pb_Logros";
+            this.pb_Logros.Size = new System.Drawing.Size(50, 50);
+            this.pb_Logros.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_Logros.TabIndex = 4;
+            this.pb_Logros.TabStop = false;
+            this.pb_Logros.Click += new System.EventHandler(this.pb_Logros_Click);
+            this.pb_Logros.MouseEnter += new System.EventHandler(this.pb_Logros_MouseEnter);
+            this.pb_Logros.MouseLeave += new System.EventHandler(this.pb_Logros_MouseLeave);
             // 
             // pb_Weather
             // 
@@ -252,18 +277,67 @@
             this.pbCerrar.MouseEnter += new System.EventHandler(this.panelCerrar_MouseEnter);
             this.pbCerrar.MouseLeave += new System.EventHandler(this.panelCerrar_MouseLeave);
             // 
+            // labelLogros
+            // 
+            this.labelLogros.AutoSize = true;
+            this.labelLogros.BackColor = System.Drawing.Color.Transparent;
+            this.labelLogros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelLogros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogros.ForeColor = System.Drawing.Color.White;
+            this.labelLogros.Location = new System.Drawing.Point(92, 220);
+            this.labelLogros.Name = "labelLogros";
+            this.labelLogros.Size = new System.Drawing.Size(53, 17);
+            this.labelLogros.TabIndex = 11;
+            this.labelLogros.Text = "Logros";
+            // 
+            // panelForm
+            // 
+            this.panelForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
+            this.panelForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelForm.Location = new System.Drawing.Point(125, 47);
+            this.panelForm.Name = "panelForm";
+            this.panelForm.Size = new System.Drawing.Size(663, 441);
+            this.panelForm.TabIndex = 17;
+            // 
+            // panelLogros
+            // 
+            this.panelLogros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
+            this.panelLogros.Location = new System.Drawing.Point(492, 411);
+            this.panelLogros.Name = "panelLogros";
+            this.panelLogros.Size = new System.Drawing.Size(288, 65);
+            this.panelLogros.TabIndex = 18;
+            // 
+            // labelAdmin
+            // 
+            this.labelAdmin.AutoSize = true;
+            this.labelAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.labelAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAdmin.ForeColor = System.Drawing.Color.White;
+            this.labelAdmin.Location = new System.Drawing.Point(92, 302);
+            this.labelAdmin.Name = "labelAdmin";
+            this.labelAdmin.Size = new System.Drawing.Size(89, 17);
+            this.labelAdmin.TabIndex = 14;
+            this.labelAdmin.Text = "Menú Admin";
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.labelAdmin);
+            this.Controls.Add(this.panelLogros);
+            this.Controls.Add(this.labelLogros);
             this.Controls.Add(this.panelVentana);
             this.Controls.Add(this.labelCerrarSesion);
             this.Controls.Add(this.labelPerfil);
             this.Controls.Add(this.labelWeather);
-            this.Controls.Add(this.panelForm);
             this.Controls.Add(this.panelBotones);
+            this.Controls.Add(this.panelForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(950, 600);
@@ -272,6 +346,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Principal";
             this.panelBotones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_MenuAdmin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Logros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Weather)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Perfil)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -288,8 +364,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelForm;
         private System.Windows.Forms.Panel panelBotones;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pb_Perfil;
@@ -304,5 +378,11 @@
         private System.Windows.Forms.Panel panelCerrar;
         private System.Windows.Forms.PictureBox pbCerrar;
         private System.Windows.Forms.Label labelVentana;
+        private System.Windows.Forms.PictureBox pb_Logros;
+        private System.Windows.Forms.Label labelLogros;
+        private System.Windows.Forms.Panel panelForm;
+        private System.Windows.Forms.Panel panelLogros;
+        private System.Windows.Forms.PictureBox pb_MenuAdmin;
+        private System.Windows.Forms.Label labelAdmin;
     }
 }

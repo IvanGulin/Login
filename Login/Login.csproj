@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="BD.cs" />
     <Compile Include="ClaseSQL.cs" />
+    <Compile Include="ComprobarLogros.cs" />
     <Compile Include="ElegirImagen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +75,12 @@
     <Compile Include="EliminaUsuario.Designer.cs">
       <DependentUpon>EliminaUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaAdmin.Designer.cs">
+      <DependentUpon>ListaAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +92,18 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logros.Designer.cs">
+      <DependentUpon>Logros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MensajeLogro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MensajeLogro.Designer.cs">
+      <DependentUpon>MensajeLogro.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuAdmin.cs">
       <SubType>Form</SubType>
@@ -119,6 +138,12 @@
     </Compile>
     <Compile Include="Tiempo.cs" />
     <Compile Include="Usuarios.cs" />
+    <Compile Include="VerLogrosUsuarioInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerLogrosUsuarioInput.Designer.cs">
+      <DependentUpon>VerLogrosUsuarioInput.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Aplicacion.resx">
       <DependentUpon>Aplicacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,11 +153,20 @@
     <EmbeddedResource Include="EliminaUsuario.resx">
       <DependentUpon>EliminaUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListaAdmin.resx">
+      <DependentUpon>ListaAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListaUsuarios.resx">
       <DependentUpon>ListaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logros.resx">
+      <DependentUpon>Logros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MensajeLogro.resx">
+      <DependentUpon>MensajeLogro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
@@ -150,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerLogrosUsuarioInput.resx">
+      <DependentUpon>VerLogrosUsuarioInput.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BD.datasource" />
@@ -246,6 +283,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Imagenes\arriba-a-la-izquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\premio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\administracion.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />

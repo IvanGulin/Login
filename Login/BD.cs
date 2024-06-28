@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Windows.Forms;
 
@@ -16,6 +13,7 @@ namespace Login
         {
             connectionString = $"Data Source={ruta};Version=3;";
             IniciarBD();
+            //AddLogros();
         }
 
         private void IniciarBD()
@@ -47,6 +45,21 @@ namespace Login
                     FOREIGN KEY (NombreUsuario) REFERENCES Login (NombreUsuario)
                 )";
 
+                string createLogrosInfoTable = @"
+                CREATE TABLE IF NOT EXISTS LogrosInfo(
+                    LogroID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    Nombre TEXT NOT NULL
+                )";
+
+                string createLogrosUsuarioTable = @"
+                CREATE TABLE IF NOT EXISTS LogrosUsuario(
+                    UsuarioLogroID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    NombreUsuario TEXT,
+                    LogroID INTEGER NOT NULL,
+                    FOREIGN KEY (NombreUsuario) REFERENCES Login (NombreUsuario),
+                    FOREIGN KEY (LogroID) REFERENCES LogrosInfo (LogroID)
+                )";
+
                 using (var command = new SQLiteCommand(createLoginTable, connection))
                 {
                     command.ExecuteNonQuery();
@@ -61,7 +74,47 @@ namespace Login
                 {
                     command.ExecuteNonQuery();
                 }
+
+                using (var command = new SQLiteCommand(createLogrosInfoTable, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+
+                using (var command = new SQLiteCommand(createLogrosUsuarioTable, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
             }
         }
+
+        /*
+        private void AddLogros()
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string createLoginTable = @"INSERT INTO LogrosInfo (Nombre) VALUES
+                    ('Primer Login.'),
+                    ('Cambiar la imagen de perfil.'),
+                    ('Modifica tus datos personales.'),
+                    ('Utiliza la app del Tiempo.');";
+
+                    using (var command = new SQLiteCommand(createLoginTable, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Datos insertados.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        */
     }
 }

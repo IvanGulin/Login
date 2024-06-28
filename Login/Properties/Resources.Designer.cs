@@ -63,6 +63,16 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap administracion {
+            get {
+                object obj = ResourceManager.GetObject("administracion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arriba_a_la_izquierda {
             get {
                 object obj = ResourceManager.GetObject("arriba-a-la-izquierda", resourceCulture);
@@ -286,6 +296,16 @@ namespace Login.Properties {
         internal static System.Drawing.Bitmap minimize_sign {
             get {
                 object obj = ResourceManager.GetObject("minimize-sign", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap premio {
+            get {
+                object obj = ResourceManager.GetObject("premio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

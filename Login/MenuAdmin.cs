@@ -51,7 +51,9 @@ namespace Login
 
         private void btn_MostrarTodosAdmin_Click(object sender, EventArgs e)
         {
-            sql.MostrarAdmins();
+            ListaAdmin listaAdmin = new ListaAdmin();
+            listaAdmin.ShowDialog();
+            //sql.MostrarAdmins();
         }
 
         private void panelVentana_MouseDown(object sender, MouseEventArgs e)
@@ -111,6 +113,22 @@ namespace Login
         private void panelCerrar_MouseLeave(object sender, EventArgs e)
         {
             FondoPanelOff(panelCerrar);
+        }
+
+        private void btn_BorrarLogrosUsuario_Click(object sender, EventArgs e)
+        {
+            VerLogrosUsuarioInput vl = new VerLogrosUsuarioInput();
+            vl.ShowDialog();
+            string nombreUsuario = vl.NombreUsuario;
+            sql.BorrarTodosLogrosUsuario(nombreUsuario);
+        }
+
+        private void btn_MostrarLogrosUsuario_Click(object sender, EventArgs e)
+        {
+            VerLogrosUsuarioInput vl = new VerLogrosUsuarioInput();
+            vl.ShowDialog();
+            string nombreUsuario = vl.NombreUsuario;
+            sql.VerTodosLogrosUsuarios(nombreUsuario);
         }
     }
 }

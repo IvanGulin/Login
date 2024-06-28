@@ -49,7 +49,7 @@ namespace Login
 
         private void ComprobarAdmin()
         {
-            if (entradaUsuario.Text.Equals("administrador") || sql.EsAdmin(entradaUsuario.Text))
+            if (entradaUsuario.Text.Equals("administrador") )
             {
                 MessageBox.Show("Menú administrador.");
                 MenuAdmin menu = new MenuAdmin();
@@ -59,7 +59,6 @@ namespace Login
             }
             else
             {
-                MessageBox.Show("Acceso concedido.");
                 MenuPrincipal menuPrincipal = new MenuPrincipal(entradaUsuario.Text);
                 
                 Hide();

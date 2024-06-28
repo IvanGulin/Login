@@ -40,6 +40,8 @@
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.panelCerrar = new System.Windows.Forms.Panel();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
+            this.btn_MostrarLogrosUsuario = new System.Windows.Forms.Button();
+            this.btn_BorrarLogrosUsuario = new System.Windows.Forms.Button();
             this.panelVentana.SuspendLayout();
             this.panelMinimizar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
@@ -199,12 +201,44 @@
             this.pbCerrar.MouseEnter += new System.EventHandler(this.panelCerrar_MouseEnter);
             this.pbCerrar.MouseLeave += new System.EventHandler(this.panelCerrar_MouseLeave);
             // 
+            // btn_MostrarLogrosUsuario
+            // 
+            this.btn_MostrarLogrosUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_MostrarLogrosUsuario.FlatAppearance.BorderSize = 0;
+            this.btn_MostrarLogrosUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_MostrarLogrosUsuario.Font = new System.Drawing.Font("Perpetua Titling MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MostrarLogrosUsuario.ForeColor = System.Drawing.Color.White;
+            this.btn_MostrarLogrosUsuario.Location = new System.Drawing.Point(120, 267);
+            this.btn_MostrarLogrosUsuario.Name = "btn_MostrarLogrosUsuario";
+            this.btn_MostrarLogrosUsuario.Size = new System.Drawing.Size(135, 69);
+            this.btn_MostrarLogrosUsuario.TabIndex = 11;
+            this.btn_MostrarLogrosUsuario.Text = "MOSTRAR LOGROS DE USUARIO";
+            this.btn_MostrarLogrosUsuario.UseVisualStyleBackColor = false;
+            this.btn_MostrarLogrosUsuario.Click += new System.EventHandler(this.btn_MostrarLogrosUsuario_Click);
+            // 
+            // btn_BorrarLogrosUsuario
+            // 
+            this.btn_BorrarLogrosUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_BorrarLogrosUsuario.FlatAppearance.BorderSize = 0;
+            this.btn_BorrarLogrosUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_BorrarLogrosUsuario.Font = new System.Drawing.Font("Perpetua Titling MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BorrarLogrosUsuario.ForeColor = System.Drawing.Color.White;
+            this.btn_BorrarLogrosUsuario.Location = new System.Drawing.Point(434, 267);
+            this.btn_BorrarLogrosUsuario.Name = "btn_BorrarLogrosUsuario";
+            this.btn_BorrarLogrosUsuario.Size = new System.Drawing.Size(135, 69);
+            this.btn_BorrarLogrosUsuario.TabIndex = 12;
+            this.btn_BorrarLogrosUsuario.Text = "BORRAR LOGROS DE UN USUARIO";
+            this.btn_BorrarLogrosUsuario.UseVisualStyleBackColor = false;
+            this.btn_BorrarLogrosUsuario.Click += new System.EventHandler(this.btn_BorrarLogrosUsuario_Click);
+            // 
             // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(700, 500);
+            this.Controls.Add(this.btn_BorrarLogrosUsuario);
+            this.Controls.Add(this.btn_MostrarLogrosUsuario);
             this.Controls.Add(this.panelVentana);
             this.Controls.Add(this.btn_MostrarTodosAdmin);
             this.Controls.Add(this.EliminarUsuario);
@@ -217,8 +251,6 @@
             this.MaximumSize = new System.Drawing.Size(700, 500);
             this.MinimumSize = new System.Drawing.Size(700, 500);
             this.Name = "MenuAdmin";
-            this.ShowIcon = true;
-            this.ShowInTaskbar = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Administrador";
             this.panelVentana.ResumeLayout(false);
@@ -245,5 +277,7 @@
         private System.Windows.Forms.Panel panelCerrar;
         private System.Windows.Forms.PictureBox pbCerrar;
         private System.Windows.Forms.Label labelVentana;
+        private System.Windows.Forms.Button btn_MostrarLogrosUsuario;
+        private System.Windows.Forms.Button btn_BorrarLogrosUsuario;
     }
 }

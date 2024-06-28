@@ -65,7 +65,7 @@
             this.labelContraseña.AutoSize = true;
             this.labelContraseña.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelContraseña.ForeColor = System.Drawing.Color.White;
-            this.labelContraseña.Location = new System.Drawing.Point(200, 295);
+            this.labelContraseña.Location = new System.Drawing.Point(200, 298);
             this.labelContraseña.Name = "labelContraseña";
             this.labelContraseña.Size = new System.Drawing.Size(99, 21);
             this.labelContraseña.TabIndex = 1;
@@ -73,19 +73,19 @@
             // 
             // entradaUsuario
             // 
-            this.entradaUsuario.Location = new System.Drawing.Point(136, 214);
+            this.entradaUsuario.Location = new System.Drawing.Point(120, 214);
             this.entradaUsuario.MaxLength = 25;
             this.entradaUsuario.Name = "entradaUsuario";
-            this.entradaUsuario.Size = new System.Drawing.Size(227, 20);
+            this.entradaUsuario.Size = new System.Drawing.Size(250, 20);
             this.entradaUsuario.TabIndex = 2;
             // 
             // entradaContraseña
             // 
-            this.entradaContraseña.Location = new System.Drawing.Point(136, 316);
+            this.entradaContraseña.Location = new System.Drawing.Point(120, 319);
             this.entradaContraseña.MaxLength = 50;
             this.entradaContraseña.Name = "entradaContraseña";
             this.entradaContraseña.PasswordChar = '*';
-            this.entradaContraseña.Size = new System.Drawing.Size(227, 20);
+            this.entradaContraseña.Size = new System.Drawing.Size(250, 20);
             this.entradaContraseña.TabIndex = 3;
             this.entradaContraseña.UseSystemPasswordChar = true;
             this.entradaContraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.entradaContraseña_KeyDown);
@@ -190,9 +190,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Login.Properties.Resources.image_processing20191128_24941_zbq3ty;
-            this.pictureBox2.Location = new System.Drawing.Point(93, 17);
+            this.pictureBox2.Location = new System.Drawing.Point(81, 13);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(301, 244);
+            this.pictureBox2.Size = new System.Drawing.Size(325, 244);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;

@@ -16,11 +16,18 @@ namespace Login
         private Usuarios usuario;
         private System.Windows.Forms.ImageList listaImagenes = new ImageList();
         private ElegirImagen elegirImagen = new ElegirImagen();
+        private List<int> listaLogrosID;
+        private ComprobarLogros cl = new ComprobarLogros();
+        private bool cambioImagen, cambioDatos = false;
 
-        public PerfilUsuario(string nombreUsuario)
+        public delegate void pasarLogros(int logro);
+        public event pasarLogros PasarLogro;
+
+        public PerfilUsuario(string nombreUsuario, List<int> listaLogrosID)
         {
             InitializeComponent();
             this.nombreUsuario = nombreUsuario;
+            this.listaLogrosID = listaLogrosID;
             listaImagenes = elegirImagen.GetListImage();
 
             SerializarUsuario();
@@ -104,6 +111,13 @@ namespace Login
             elegirImagen.ShowDialog();
             imagen = elegirImagen.ImagenSeleccionada;
 
+            if (cl.EsPrimeraVez(2, listaLogrosID, nombreUsuario))
+            {
+                sql.AddLogroUsuario(nombreUsuario, 2);
+                cambioImagen = true;
+                PasarLogro(2);
+            }
+
             sql.AlmacenarImagen(imagen, nombreUsuario);
             CambiarImagen();
         }
@@ -137,6 +151,14 @@ namespace Login
         {
             DeshabilitarEdicion();
             sql.AlmacenarDatos(tbNombre.Text, tbApellidos.Text, tbDescripcion.Text, tbCorreo.Text, nombreUsuario, imagen);
+
+            if (cl.EsPrimeraVez(3, listaLogrosID, nombreUsuario))
+            {
+                sql.AddLogroUsuario(nombreUsuario, 3);
+                cambioDatos = true;
+            }
+
+            PasarLogro(1);
         }
 
         private void btnTemperaturas_Click(object sender, System.EventArgs e)
