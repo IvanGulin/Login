@@ -58,14 +58,17 @@ namespace Login
                 MenuAdmin menu = new MenuAdmin();
                 Hide();
                 menu.Show();
-                menu.FormClosed += (s, args) => Show();
+                Login login = new Login();
+                menu.FormClosed += (s, args) => login.Show();
             }
             else
             {
                 MenuPrincipal menuPrincipal = new MenuPrincipal(entradaUsuario.Text);
                 Hide();
                 menuPrincipal.Show();
-                menuPrincipal.FormClosed += (s, args) => Show();
+                Login login = new Login();
+                menuPrincipal.FormClosed += (s, args) => login.Show();
+                
             }
         }
 

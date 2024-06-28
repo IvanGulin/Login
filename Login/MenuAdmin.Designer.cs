@@ -37,17 +37,19 @@
             this.panelVentana = new System.Windows.Forms.Panel();
             this.labelVentana = new System.Windows.Forms.Label();
             this.panelMinimizar = new System.Windows.Forms.Panel();
+            this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.panelCerrar = new System.Windows.Forms.Panel();
+            this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.btn_MostrarLogrosUsuario = new System.Windows.Forms.Button();
             this.btn_BorrarLogrosUsuario = new System.Windows.Forms.Button();
-            this.pbMinimizar = new System.Windows.Forms.PictureBox();
-            this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.timerTrans = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelVentana.SuspendLayout();
             this.panelMinimizar.SuspendLayout();
-            this.panelCerrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
+            this.panelCerrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Registrar
@@ -150,6 +152,20 @@
             this.panelMinimizar.MouseEnter += new System.EventHandler(this.panelMinimizar_MouseEnter);
             this.panelMinimizar.MouseLeave += new System.EventHandler(this.panelMinimizar_MouseLeave);
             // 
+            // pbMinimizar
+            // 
+            this.pbMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMinimizar.Image = global::Login.Properties.Resources.minimize_sign;
+            this.pbMinimizar.Location = new System.Drawing.Point(7, 7);
+            this.pbMinimizar.Name = "pbMinimizar";
+            this.pbMinimizar.Size = new System.Drawing.Size(15, 15);
+            this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMinimizar.TabIndex = 0;
+            this.pbMinimizar.TabStop = false;
+            this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
+            this.pbMinimizar.MouseEnter += new System.EventHandler(this.panelMinimizar_MouseEnter);
+            this.pbMinimizar.MouseLeave += new System.EventHandler(this.panelMinimizar_MouseLeave);
+            // 
             // panelCerrar
             // 
             this.panelCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
@@ -162,6 +178,20 @@
             this.panelCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
             this.panelCerrar.MouseEnter += new System.EventHandler(this.panelCerrar_MouseEnter);
             this.panelCerrar.MouseLeave += new System.EventHandler(this.panelCerrar_MouseLeave);
+            // 
+            // pbCerrar
+            // 
+            this.pbCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCerrar.Image = global::Login.Properties.Resources.close;
+            this.pbCerrar.Location = new System.Drawing.Point(7, 7);
+            this.pbCerrar.Name = "pbCerrar";
+            this.pbCerrar.Size = new System.Drawing.Size(15, 15);
+            this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCerrar.TabIndex = 0;
+            this.pbCerrar.TabStop = false;
+            this.pbCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
+            this.pbCerrar.MouseEnter += new System.EventHandler(this.panelCerrar_MouseEnter);
+            this.pbCerrar.MouseLeave += new System.EventHandler(this.panelCerrar_MouseLeave);
             // 
             // btn_MostrarLogrosUsuario
             // 
@@ -193,39 +223,23 @@
             this.btn_BorrarLogrosUsuario.UseVisualStyleBackColor = false;
             this.btn_BorrarLogrosUsuario.Click += new System.EventHandler(this.btn_BorrarLogrosUsuario_Click);
             // 
-            // pbMinimizar
-            // 
-            this.pbMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbMinimizar.Image = global::Login.Properties.Resources.minimize_sign;
-            this.pbMinimizar.Location = new System.Drawing.Point(7, 7);
-            this.pbMinimizar.Name = "pbMinimizar";
-            this.pbMinimizar.Size = new System.Drawing.Size(15, 15);
-            this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMinimizar.TabIndex = 0;
-            this.pbMinimizar.TabStop = false;
-            this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
-            this.pbMinimizar.MouseEnter += new System.EventHandler(this.panelMinimizar_MouseEnter);
-            this.pbMinimizar.MouseLeave += new System.EventHandler(this.panelMinimizar_MouseLeave);
-            // 
-            // pbCerrar
-            // 
-            this.pbCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCerrar.Image = global::Login.Properties.Resources.close;
-            this.pbCerrar.Location = new System.Drawing.Point(7, 7);
-            this.pbCerrar.Name = "pbCerrar";
-            this.pbCerrar.Size = new System.Drawing.Size(15, 15);
-            this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCerrar.TabIndex = 0;
-            this.pbCerrar.TabStop = false;
-            this.pbCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
-            this.pbCerrar.MouseEnter += new System.EventHandler(this.panelCerrar_MouseEnter);
-            this.pbCerrar.MouseLeave += new System.EventHandler(this.panelCerrar_MouseLeave);
-            // 
             // timerTrans
             // 
             this.timerTrans.Enabled = true;
             this.timerTrans.Interval = 20;
             this.timerTrans.Tick += new System.EventHandler(this.timerTrans_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Login.Properties.Resources.arriba_a_la_izquierda;
+            this.pictureBox1.Location = new System.Drawing.Point(-2, 49);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(71, 55);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // MenuAdmin
             // 
@@ -233,6 +247,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(700, 500);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_BorrarLogrosUsuario);
             this.Controls.Add(this.btn_MostrarLogrosUsuario);
             this.Controls.Add(this.panelVentana);
@@ -253,9 +268,10 @@
             this.panelVentana.ResumeLayout(false);
             this.panelVentana.PerformLayout();
             this.panelMinimizar.ResumeLayout(false);
-            this.panelCerrar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
+            this.panelCerrar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -274,5 +290,6 @@
         private System.Windows.Forms.Button btn_MostrarLogrosUsuario;
         private System.Windows.Forms.Button btn_BorrarLogrosUsuario;
         private System.Windows.Forms.Timer timerTrans;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

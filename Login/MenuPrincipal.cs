@@ -22,6 +22,7 @@ namespace Login
         private PerfilUsuario perfil;
         private bool cambioPerfil, cambioImagenPerfil;
         private bool comprobadoPerfil, comprobadoImagen;
+        private MenuAdmin menuAdmin;
 
         private Timer timerEsconder;
 
@@ -59,7 +60,7 @@ namespace Login
             pb_MenuAdmin.Visible = false;
             pb_MenuAdmin.Enabled = false;
 
-            sql.BorrarTodosLogrosUsuario(nombreUsuario);
+            //sql.BorrarTodosLogrosUsuario(nombreUsuario);
 
             IniciarPerfil();
         }
@@ -178,11 +179,24 @@ namespace Login
 
         private void pb_MenuAdmin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Menú administrador.");
-            MenuAdmin menu = new MenuAdmin();
-            Hide();
-            menu.Show();
-            menu.FormClosed += (s, args) => Show();
+            // Verificar si ya existe una instancia de MenuAdmin
+            if (menuAdmin == null || menuAdmin.IsDisposed)
+            {
+                // Si no existe o está descartada, crear una nueva instancia
+                menuAdmin = new MenuAdmin();
+
+                // Suscribir al evento FormClosed para manejar el retorno al MenuPrincipal
+                menuAdmin.FormClosed += (s, args) =>
+                {
+                    // Mostrar el MenuPrincipal al cerrarse el MenuAdmin
+                    this.Show();
+                    menuAdmin.Dispose(); // Liberar recursos de MenuAdmin
+                    menuAdmin = null;
+                };
+
+                this.Hide();
+                menuAdmin.Show();
+            }
         }
 
         private void pb_Logout_Click(object sender, EventArgs e)

@@ -54,7 +54,6 @@ namespace Login
         {
             ListaAdmin listaAdmin = new ListaAdmin();
             listaAdmin.ShowDialog();
-            //sql.MostrarAdmins();
         }
 
         private void panelVentana_MouseDown(object sender, MouseEventArgs e)
@@ -147,6 +146,7 @@ namespace Login
                 if (this.Opacity == 0)
                 {
                     timerTrans.Stop();
+                    Close();
                 }
                 else
                 {
@@ -177,6 +177,12 @@ namespace Login
                     this.Opacity = this.Opacity - .1;
                 }
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.trans = "Salida";
+            timerTrans.Start();
         }
     }
 }
