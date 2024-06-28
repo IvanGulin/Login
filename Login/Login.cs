@@ -9,6 +9,7 @@ namespace Login
         private ClaseSQL sql = new ClaseSQL();
         private bool isDragging = false;
         private Point startPoint = new Point(0, 0);
+        private string trans;
         public Login()
         {
             InitializeComponent();
@@ -37,7 +38,7 @@ namespace Login
             {
                 ComprobarAdmin();
                 entradaUsuario.Text = "";
-                entradaContraseña.Text = "";
+                entradaContraseña.Text = ""; 
             }
             else
             {
@@ -49,9 +50,11 @@ namespace Login
 
         private void ComprobarAdmin()
         {
+            trans = "Salida";
+            timerTrans.Start();
+
             if (entradaUsuario.Text.Equals("administrador") )
             {
-                MessageBox.Show("Menú administrador.");
                 MenuAdmin menu = new MenuAdmin();
                 Hide();
                 menu.Show();
@@ -60,7 +63,6 @@ namespace Login
             else
             {
                 MenuPrincipal menuPrincipal = new MenuPrincipal(entradaUsuario.Text);
-                
                 Hide();
                 menuPrincipal.Show();
                 menuPrincipal.FormClosed += (s, args) => Show();
@@ -97,7 +99,8 @@ namespace Login
 
         private void pbCerrar_Click(object sender, EventArgs e)
         {
-            Close();
+            trans = "Cerrar";
+            timerTrans.Start();
         }
 
         private void pbMinimizar_Click(object sender, EventArgs e)
@@ -132,6 +135,52 @@ namespace Login
         private void panelCerrar_MouseLeave(object sender, EventArgs e)
         {
             FondoPanelOff(panelCerrar);
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            this.trans = "Entrada";
+            this.Top = this.Top + 15;
+            timerTrans.Start();
+        }
+
+        private void timerTrans_Tick(object sender, EventArgs e)
+        {
+            if (trans == "Salida")
+            {
+                if(this.Opacity == 0)
+                {
+                    timerTrans.Stop();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity - .1;
+                }
+            }
+            else if (trans == "Entrada")
+            {
+                if (this.Opacity == 1)
+                {
+                    timerTrans.Stop();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity + .15;
+                    this.Top = this.Top - 5;
+                }
+            }
+            else if (trans == "Cerrar")
+            {
+                if (this.Opacity == 0)
+                {
+                    timerTrans.Stop();
+                    Application.Exit();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity - .1;
+                }
+            }
         }
     }
 }

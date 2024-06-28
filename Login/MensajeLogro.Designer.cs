@@ -39,7 +39,7 @@
             this.panelLogros.Controls.Add(this.labelTextoLogro);
             this.panelLogros.Location = new System.Drawing.Point(0, 0);
             this.panelLogros.Name = "panelLogros";
-            this.panelLogros.Size = new System.Drawing.Size(312, 100);
+            this.panelLogros.Size = new System.Drawing.Size(401, 100);
             this.panelLogros.TabIndex = 18;
             // 
             // labelTextoLogro
@@ -57,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 99);
+            this.ClientSize = new System.Drawing.Size(401, 99);
             this.Controls.Add(this.panelLogros);
             this.Name = "MensajeLogro";
             this.Text = "MensajeLogro";

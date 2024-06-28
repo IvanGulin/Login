@@ -7,7 +7,10 @@ namespace Login
 {
     public partial class MenuPrincipal : Form
     {
-        private string nombreUsuario;
+        private string nombreUsuario, trans, transLogros;
+        private int velocidadPanel = 15;
+        private int posicionMax = 462;
+        private int posicionMin;
         private bool isDragging = false;
         private Point startPoint = new Point(0, 0);
         private ClaseSQL sql = new ClaseSQL();
@@ -20,6 +23,8 @@ namespace Login
         private bool cambioPerfil, cambioImagenPerfil;
         private bool comprobadoPerfil, comprobadoImagen;
 
+        private Timer timerEsconder;
+
         public MenuPrincipal(string nombreUsuario)
         {
             InitializeComponent();
@@ -28,6 +33,20 @@ namespace Login
             timerPanel = new Timer();
             timerPanel.Interval = 3000;
             timerPanel.Tick += TimerPanel_Tick;
+
+            timerLogros = new Timer();
+            timerLogros.Interval = 30;
+            timerLogros.Tick += timerLogros_Tick;
+
+            timerTrans = new Timer();
+            timerTrans.Interval = 30;
+            timerTrans.Tick += timerTrans_Tick;
+
+            timerEsconder = new Timer();
+            timerEsconder.Interval = 3000;
+            timerEsconder.Tick += TimerEsconder_Tick;
+
+            posicionMin = panelForm.Right - 500;
 
             this.nombreUsuario = nombreUsuario;
 
@@ -40,28 +59,36 @@ namespace Login
             pb_MenuAdmin.Visible = false;
             pb_MenuAdmin.Enabled = false;
 
-            //sql.BorrarTodosLogrosUsuario(nombreUsuario);
+            sql.BorrarTodosLogrosUsuario(nombreUsuario);
 
             IniciarPerfil();
         }
 
         private void TimerPanel_Tick(object sender, EventArgs e)
         {
-            panelLogros.Visible = false;
             timerPanel.Stop();
+
+            MostrarPanel("Logro Ejemplo");
+        }
+
+        private void TimerEsconder_Tick(object sender, EventArgs e)
+        {
+            timerEsconder.Stop();
+            transLogros = "Salida";
+            timerLogros.Start();
         }
 
         private void MostrarPanel(string logro)
         {
-            timerPanel.Stop();
-
-            mensajeLogro = new MensajeLogro("Logro Completado: " + logro);
             panelLogros.Visible = true;
+            panelLogros.Left = panelForm.Right + 50;
+            transLogros = "Entrada";
+            mensajeLogro = new MensajeLogro("Logro Completado: " + logro);
             mensajeLogro.BringToFront();
 
             ShowFormInPanel(mensajeLogro, panelLogros);
-            
-            timerPanel.Start();  
+
+            timerLogros.Start();
         }
 
         private void ShowFormInPanel(Form form, Panel panel)
@@ -73,7 +100,7 @@ namespace Login
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
             form.Dock = DockStyle.Fill;
-           
+
             // Añadir el formulario al panel y mostrarlo
             panel.Controls.Add(form);
             form.Show();
@@ -86,7 +113,7 @@ namespace Login
                 pb_MenuAdmin.Visible = true;
                 pb_MenuAdmin.Enabled = true;
             }
-            perfil = new PerfilUsuario(nombreUsuario, listaLogroID);      
+            perfil = new PerfilUsuario(nombreUsuario, listaLogroID);
             perfil.PasarLogro += new PerfilUsuario.pasarLogros(ejecutar);
             ShowFormInPanel(perfil, panelForm);
             labelVentana.Text = "PERFIL";
@@ -98,7 +125,7 @@ namespace Login
             }
         }
 
-        private void ejecutar (int logro)
+        private void ejecutar(int logro)
         {
             cambioPerfil = true;
             ComprobarLogrosPerfil(logro);
@@ -115,6 +142,7 @@ namespace Login
             if (logro == 2 && !comprobadoImagen)
             {
                 MostrarPanel("Cambiar la imagen de perfil.");
+                comprobadoImagen = true;
             }
         }
 
@@ -168,7 +196,7 @@ namespace Login
         }
 
         private new void MouseLeave(PictureBox pb)
-        {   
+        {
             pb.Size = new Size(50, 50);
         }
 
@@ -254,7 +282,8 @@ namespace Login
 
         private void pbCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            trans = "Salida";
+            timerTrans.Start();
         }
 
         private void pbMinimizar_Click(object sender, EventArgs e)
@@ -266,6 +295,7 @@ namespace Login
         {
             panel.BackColor = Color.FromArgb(42, 40, 120);
         }
+
         private void FondoPanelOff(Panel panel)
         {
             panel.BackColor = Color.FromArgb(42, 40, 51);
@@ -289,6 +319,87 @@ namespace Login
         private void panelCerrar_MouseLeave(object sender, EventArgs e)
         {
             FondoPanelOff(panelCerrar);
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+            this.trans = "Entrada";
+            this.Top = this.Top + 15;
+            timerTrans.Start();
+        }
+
+        private void timerTrans_Tick(object sender, EventArgs e)
+        {
+            if (trans == "Salida")
+            {
+                if (this.Opacity == 0)
+                {
+                    timerTrans.Stop();
+                    Application.Exit();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity - .1;
+                }
+            }
+            else if (trans == "Entrada")
+            {
+                if (this.Opacity == 1)
+                {
+                    timerTrans.Stop();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity + .15;
+                    this.Top = this.Top - 5;
+                }
+            }
+        }
+
+        private void timerLogros_Tick(object sender, EventArgs e)
+        {
+            Animacion();
+        }
+
+        private void Animacion()
+        {
+            if (transLogros == "Salida")
+            {
+                if (panelLogros.Left < panelForm.Right)
+                {
+                    panelLogros.Left += velocidadPanel;
+
+                    if (panelLogros.Left >= panelForm.Right)
+                    {
+                        panelLogros.Left = panelForm.Right;
+                        timerLogros.Stop();
+                        panelLogros.Visible = false;
+                    }
+                }
+                else
+                {
+                    timerLogros.Stop();
+                }
+            }
+            else if (transLogros == "Entrada")
+            {
+                if (panelLogros.Left > posicionMax)
+                {
+                    panelLogros.Left -= velocidadPanel;
+
+                    if (panelLogros.Left <= posicionMax)
+                    {
+                        panelLogros.Left = posicionMax;
+                        timerLogros.Stop();
+                        timerEsconder.Start();
+                    }
+                }
+                else
+                {
+                    timerLogros.Stop();
+                    timerEsconder.Start();
+                }
+            }
         }
     }
 }

@@ -86,35 +86,5 @@ namespace Login
                 }
             }
         }
-
-        /*
-        private void AddLogros()
-        {
-            try
-            {
-                using (var connection = new SQLiteConnection(connectionString))
-                {
-                    connection.Open();
-
-                    string createLoginTable = @"INSERT INTO LogrosInfo (Nombre) VALUES
-                    ('Primer Login.'),
-                    ('Cambiar la imagen de perfil.'),
-                    ('Modifica tus datos personales.'),
-                    ('Utiliza la app del Tiempo.');";
-
-                    using (var command = new SQLiteCommand(createLoginTable, connection))
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                }
-
-                MessageBox.Show("Datos insertados.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        */
     }
 }

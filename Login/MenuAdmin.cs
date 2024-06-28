@@ -10,6 +10,7 @@ namespace Login
         ClaseSQL sql = new ClaseSQL();
         private bool isDragging = false;
         private Point startPoint = new Point(0, 0);
+        private string trans;
         public MenuAdmin()
         {
             InitializeComponent();
@@ -78,7 +79,8 @@ namespace Login
 
         private void pbCerrar_Click(object sender, EventArgs e)
         {
-            Close();
+            trans = "Cerrar";
+            timerTrans.Start();
         }
 
         private void pbMinimizar_Click(object sender, EventArgs e)
@@ -129,6 +131,52 @@ namespace Login
             vl.ShowDialog();
             string nombreUsuario = vl.NombreUsuario;
             sql.VerTodosLogrosUsuarios(nombreUsuario);
+        }
+
+        private void MenuAdmin_Load(object sender, EventArgs e)
+        {
+            this.trans = "Entrada";
+            this.Top = this.Top + 15;
+            timerTrans.Start();
+        }
+
+        private void timerTrans_Tick(object sender, EventArgs e)
+        {
+            if (trans == "Salida")
+            {
+                if (this.Opacity == 0)
+                {
+                    timerTrans.Stop();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity - .1;
+                }
+            }
+            else if (trans == "Entrada")
+            {
+                if (this.Opacity == 1)
+                {
+                    timerTrans.Stop();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity + .15;
+                    this.Top = this.Top - 5;
+                }
+            }
+            else if (trans == "Cerrar")
+            {
+                if (this.Opacity == 0)
+                {
+                    timerTrans.Stop();
+                    Application.Exit();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity - .1;
+                }
+            }
         }
     }
 }

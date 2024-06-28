@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.labelUsuario = new System.Windows.Forms.Label();
             this.labelContraseña = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.labelVentana = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.timerTrans = new System.Windows.Forms.Timer(this.components);
             this.panelVentana.SuspendLayout();
             this.panelMinimizar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
@@ -197,6 +199,12 @@
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
+            // timerTrans
+            // 
+            this.timerTrans.Enabled = true;
+            this.timerTrans.Interval = 20;
+            this.timerTrans.Tick += new System.EventHandler(this.timerTrans_Tick);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,8 +225,10 @@
             this.MaximumSize = new System.Drawing.Size(500, 500);
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "Login";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panelVentana.ResumeLayout(false);
             this.panelMinimizar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
@@ -244,6 +254,7 @@
         private System.Windows.Forms.Panel panelMinimizar;
         private System.Windows.Forms.PictureBox pbMinimizar;
         private System.Windows.Forms.Label labelVentana;
+        private System.Windows.Forms.Timer timerTrans;
     }
 }
 

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdmin));
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_Registrar = new System.Windows.Forms.Button();
             this.btn_MostrarTodosUsuarios = new System.Windows.Forms.Button();
             this.EliminarUsuario = new System.Windows.Forms.Button();
@@ -37,28 +37,18 @@
             this.panelVentana = new System.Windows.Forms.Panel();
             this.labelVentana = new System.Windows.Forms.Label();
             this.panelMinimizar = new System.Windows.Forms.Panel();
-            this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.panelCerrar = new System.Windows.Forms.Panel();
-            this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.btn_MostrarLogrosUsuario = new System.Windows.Forms.Button();
             this.btn_BorrarLogrosUsuario = new System.Windows.Forms.Button();
+            this.pbMinimizar = new System.Windows.Forms.PictureBox();
+            this.pbCerrar = new System.Windows.Forms.PictureBox();
+            this.timerTrans = new System.Windows.Forms.Timer(this.components);
             this.panelVentana.SuspendLayout();
             this.panelMinimizar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             this.panelCerrar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(285, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "MENÚ ADMIN";
             // 
             // btn_Registrar
             // 
@@ -160,20 +150,6 @@
             this.panelMinimizar.MouseEnter += new System.EventHandler(this.panelMinimizar_MouseEnter);
             this.panelMinimizar.MouseLeave += new System.EventHandler(this.panelMinimizar_MouseLeave);
             // 
-            // pbMinimizar
-            // 
-            this.pbMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbMinimizar.Image = global::Login.Properties.Resources.minimize_sign;
-            this.pbMinimizar.Location = new System.Drawing.Point(7, 7);
-            this.pbMinimizar.Name = "pbMinimizar";
-            this.pbMinimizar.Size = new System.Drawing.Size(15, 15);
-            this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMinimizar.TabIndex = 0;
-            this.pbMinimizar.TabStop = false;
-            this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
-            this.pbMinimizar.MouseEnter += new System.EventHandler(this.panelMinimizar_MouseEnter);
-            this.pbMinimizar.MouseLeave += new System.EventHandler(this.panelMinimizar_MouseLeave);
-            // 
             // panelCerrar
             // 
             this.panelCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
@@ -186,20 +162,6 @@
             this.panelCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
             this.panelCerrar.MouseEnter += new System.EventHandler(this.panelCerrar_MouseEnter);
             this.panelCerrar.MouseLeave += new System.EventHandler(this.panelCerrar_MouseLeave);
-            // 
-            // pbCerrar
-            // 
-            this.pbCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCerrar.Image = global::Login.Properties.Resources.close;
-            this.pbCerrar.Location = new System.Drawing.Point(7, 7);
-            this.pbCerrar.Name = "pbCerrar";
-            this.pbCerrar.Size = new System.Drawing.Size(15, 15);
-            this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCerrar.TabIndex = 0;
-            this.pbCerrar.TabStop = false;
-            this.pbCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
-            this.pbCerrar.MouseEnter += new System.EventHandler(this.panelCerrar_MouseEnter);
-            this.pbCerrar.MouseLeave += new System.EventHandler(this.panelCerrar_MouseLeave);
             // 
             // btn_MostrarLogrosUsuario
             // 
@@ -231,6 +193,40 @@
             this.btn_BorrarLogrosUsuario.UseVisualStyleBackColor = false;
             this.btn_BorrarLogrosUsuario.Click += new System.EventHandler(this.btn_BorrarLogrosUsuario_Click);
             // 
+            // pbMinimizar
+            // 
+            this.pbMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMinimizar.Image = global::Login.Properties.Resources.minimize_sign;
+            this.pbMinimizar.Location = new System.Drawing.Point(7, 7);
+            this.pbMinimizar.Name = "pbMinimizar";
+            this.pbMinimizar.Size = new System.Drawing.Size(15, 15);
+            this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMinimizar.TabIndex = 0;
+            this.pbMinimizar.TabStop = false;
+            this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
+            this.pbMinimizar.MouseEnter += new System.EventHandler(this.panelMinimizar_MouseEnter);
+            this.pbMinimizar.MouseLeave += new System.EventHandler(this.panelMinimizar_MouseLeave);
+            // 
+            // pbCerrar
+            // 
+            this.pbCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCerrar.Image = global::Login.Properties.Resources.close;
+            this.pbCerrar.Location = new System.Drawing.Point(7, 7);
+            this.pbCerrar.Name = "pbCerrar";
+            this.pbCerrar.Size = new System.Drawing.Size(15, 15);
+            this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCerrar.TabIndex = 0;
+            this.pbCerrar.TabStop = false;
+            this.pbCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
+            this.pbCerrar.MouseEnter += new System.EventHandler(this.panelCerrar_MouseEnter);
+            this.pbCerrar.MouseLeave += new System.EventHandler(this.panelCerrar_MouseLeave);
+            // 
+            // timerTrans
+            // 
+            this.timerTrans.Enabled = true;
+            this.timerTrans.Interval = 20;
+            this.timerTrans.Tick += new System.EventHandler(this.timerTrans_Tick);
+            // 
             // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,29 +240,27 @@
             this.Controls.Add(this.EliminarUsuario);
             this.Controls.Add(this.btn_MostrarTodosUsuarios);
             this.Controls.Add(this.btn_Registrar);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(700, 500);
             this.MinimumSize = new System.Drawing.Size(700, 500);
             this.Name = "MenuAdmin";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Administrador";
+            this.Load += new System.EventHandler(this.MenuAdmin_Load);
             this.panelVentana.ResumeLayout(false);
             this.panelVentana.PerformLayout();
             this.panelMinimizar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             this.panelCerrar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Registrar;
         private System.Windows.Forms.Button btn_MostrarTodosUsuarios;
         private System.Windows.Forms.Button EliminarUsuario;
@@ -279,5 +273,6 @@
         private System.Windows.Forms.Label labelVentana;
         private System.Windows.Forms.Button btn_MostrarLogrosUsuario;
         private System.Windows.Forms.Button btn_BorrarLogrosUsuario;
+        private System.Windows.Forms.Timer timerTrans;
     }
 }
