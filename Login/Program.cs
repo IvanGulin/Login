@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Login
@@ -11,16 +12,26 @@ namespace Login
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Process[] process = Process.GetProcessesByName("Login");
 
-            // Ruta a la base de datos SQLite
-            string ruta = "usuarios.db";
+            if (process.Length == 1)
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
 
-            // Crear instancia de DatabaseHelper
-            BD baseDatos = new BD(ruta);
+                // Ruta a la base de datos SQLite
+                string ruta = "usuarios.db";
 
-            Application.Run(new Login());
+                // Crear instancia de DatabaseHelper
+                BD baseDatos = new BD(ruta);
+
+                Application.Run(new Login());
+            }
+            else
+            {
+                MessageBox.Show("La aplicación ya está abierta.");
+            }
+            
         }
     }
 }
