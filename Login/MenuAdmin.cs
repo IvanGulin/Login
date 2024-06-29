@@ -27,9 +27,8 @@ namespace Login
 
                 registrar.FormClosed += (s, args) =>
                 {
-                    // Mostrar el MenuPrincipal al cerrarse el MenuAdmin
                     this.Show();
-                    registrar.Dispose(); // Liberar recursos de MenuAdmin
+                    registrar.Dispose();
                     registrar = null;
                     trans = "Entrada";
                     timerTrans.Start();
@@ -93,7 +92,7 @@ namespace Login
 
         private void pbCerrar_Click(object sender, EventArgs e)
         {
-            trans = "Cerrar";
+            trans = "Salida";
             timerTrans.Start();
         }
 

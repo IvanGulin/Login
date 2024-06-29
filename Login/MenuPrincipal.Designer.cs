@@ -31,39 +31,39 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.pb_MenuAdmin = new System.Windows.Forms.PictureBox();
+            this.pb_Logros = new System.Windows.Forms.PictureBox();
+            this.pb_Weather = new System.Windows.Forms.PictureBox();
+            this.pb_Perfil = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pb_Logout = new System.Windows.Forms.PictureBox();
             this.labelPerfil = new System.Windows.Forms.Label();
             this.labelWeather = new System.Windows.Forms.Label();
             this.labelCerrarSesion = new System.Windows.Forms.Label();
             this.panelVentana = new System.Windows.Forms.Panel();
             this.labelVentana = new System.Windows.Forms.Label();
             this.panelMinimizar = new System.Windows.Forms.Panel();
+            this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.panelCerrar = new System.Windows.Forms.Panel();
+            this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.labelLogros = new System.Windows.Forms.Label();
             this.panelForm = new System.Windows.Forms.Panel();
             this.panelLogros = new System.Windows.Forms.Panel();
             this.labelAdmin = new System.Windows.Forms.Label();
-            this.pbMinimizar = new System.Windows.Forms.PictureBox();
-            this.pbCerrar = new System.Windows.Forms.PictureBox();
-            this.pb_MenuAdmin = new System.Windows.Forms.PictureBox();
-            this.pb_Logros = new System.Windows.Forms.PictureBox();
-            this.pb_Weather = new System.Windows.Forms.PictureBox();
-            this.pb_Perfil = new System.Windows.Forms.PictureBox();
-            this.pb_Logout = new System.Windows.Forms.PictureBox();
             this.timerTrans = new System.Windows.Forms.Timer(this.components);
             this.timerLogros = new System.Windows.Forms.Timer(this.components);
             this.panelBotones.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panelVentana.SuspendLayout();
-            this.panelMinimizar.SuspendLayout();
-            this.panelCerrar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_MenuAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Logros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Weather)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Perfil)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Logout)).BeginInit();
+            this.panelVentana.SuspendLayout();
+            this.panelMinimizar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
+            this.panelCerrar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBotones
@@ -82,6 +82,63 @@
             this.panelBotones.Size = new System.Drawing.Size(97, 441);
             this.panelBotones.TabIndex = 1;
             // 
+            // pb_MenuAdmin
+            // 
+            this.pb_MenuAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_MenuAdmin.Image = global::Login.Properties.Resources.administracion;
+            this.pb_MenuAdmin.Location = new System.Drawing.Point(24, 240);
+            this.pb_MenuAdmin.Name = "pb_MenuAdmin";
+            this.pb_MenuAdmin.Size = new System.Drawing.Size(50, 50);
+            this.pb_MenuAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_MenuAdmin.TabIndex = 12;
+            this.pb_MenuAdmin.TabStop = false;
+            this.pb_MenuAdmin.Click += new System.EventHandler(this.pb_MenuAdmin_Click);
+            this.pb_MenuAdmin.MouseEnter += new System.EventHandler(this.pb_Admin_MouseEnter);
+            this.pb_MenuAdmin.MouseLeave += new System.EventHandler(this.pb_Admin_MouseLeave);
+            // 
+            // pb_Logros
+            // 
+            this.pb_Logros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_Logros.Image = global::Login.Properties.Resources.premio;
+            this.pb_Logros.Location = new System.Drawing.Point(24, 158);
+            this.pb_Logros.Name = "pb_Logros";
+            this.pb_Logros.Size = new System.Drawing.Size(50, 50);
+            this.pb_Logros.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_Logros.TabIndex = 4;
+            this.pb_Logros.TabStop = false;
+            this.pb_Logros.Click += new System.EventHandler(this.pb_Logros_Click);
+            this.pb_Logros.MouseEnter += new System.EventHandler(this.pb_Logros_MouseEnter);
+            this.pb_Logros.MouseLeave += new System.EventHandler(this.pb_Logros_MouseLeave);
+            // 
+            // pb_Weather
+            // 
+            this.pb_Weather.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_Weather.Image = global::Login.Properties.Resources.Weather;
+            this.pb_Weather.Location = new System.Drawing.Point(24, 83);
+            this.pb_Weather.Name = "pb_Weather";
+            this.pb_Weather.Size = new System.Drawing.Size(50, 50);
+            this.pb_Weather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_Weather.TabIndex = 3;
+            this.pb_Weather.TabStop = false;
+            this.pb_Weather.Click += new System.EventHandler(this.pb_Weather_Click);
+            this.pb_Weather.MouseEnter += new System.EventHandler(this.pb_Weather_MouseEnter);
+            this.pb_Weather.MouseLeave += new System.EventHandler(this.pb_Weather_MouseLeave);
+            // 
+            // pb_Perfil
+            // 
+            this.pb_Perfil.BackColor = System.Drawing.Color.Transparent;
+            this.pb_Perfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_Perfil.Image = global::Login.Properties.Resources.Usuario;
+            this.pb_Perfil.Location = new System.Drawing.Point(24, 14);
+            this.pb_Perfil.Name = "pb_Perfil";
+            this.pb_Perfil.Size = new System.Drawing.Size(50, 50);
+            this.pb_Perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_Perfil.TabIndex = 2;
+            this.pb_Perfil.TabStop = false;
+            this.pb_Perfil.Click += new System.EventHandler(this.pb_Perfil_Click);
+            this.pb_Perfil.MouseEnter += new System.EventHandler(this.pb_Perfil_MouseEnter);
+            this.pb_Perfil.MouseLeave += new System.EventHandler(this.pb_Perfil_MouseLeave);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pb_Logout);
@@ -90,6 +147,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(95, 76);
             this.panel1.TabIndex = 0;
+            // 
+            // pb_Logout
+            // 
+            this.pb_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_Logout.Image = global::Login.Properties.Resources.Logout;
+            this.pb_Logout.Location = new System.Drawing.Point(24, 14);
+            this.pb_Logout.Name = "pb_Logout";
+            this.pb_Logout.Size = new System.Drawing.Size(50, 50);
+            this.pb_Logout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_Logout.TabIndex = 4;
+            this.pb_Logout.TabStop = false;
+            this.pb_Logout.Click += new System.EventHandler(this.pb_Logout_Click);
+            this.pb_Logout.MouseEnter += new System.EventHandler(this.pb_Logout_MouseEnter);
+            this.pb_Logout.MouseLeave += new System.EventHandler(this.pb_Logout_MouseLeave);
             // 
             // labelPerfil
             // 
@@ -168,6 +239,20 @@
             this.panelMinimizar.MouseEnter += new System.EventHandler(this.panelMinimizar_MouseEnter);
             this.panelMinimizar.MouseLeave += new System.EventHandler(this.panelMinimizar_MouseLeave);
             // 
+            // pbMinimizar
+            // 
+            this.pbMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMinimizar.Image = global::Login.Properties.Resources.minimize_sign;
+            this.pbMinimizar.Location = new System.Drawing.Point(7, 7);
+            this.pbMinimizar.Name = "pbMinimizar";
+            this.pbMinimizar.Size = new System.Drawing.Size(15, 15);
+            this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMinimizar.TabIndex = 0;
+            this.pbMinimizar.TabStop = false;
+            this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
+            this.pbMinimizar.MouseEnter += new System.EventHandler(this.panelMinimizar_MouseEnter);
+            this.pbMinimizar.MouseLeave += new System.EventHandler(this.panelMinimizar_MouseLeave);
+            // 
             // panelCerrar
             // 
             this.panelCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
@@ -180,6 +265,20 @@
             this.panelCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
             this.panelCerrar.MouseEnter += new System.EventHandler(this.panelCerrar_MouseEnter);
             this.panelCerrar.MouseLeave += new System.EventHandler(this.panelCerrar_MouseLeave);
+            // 
+            // pbCerrar
+            // 
+            this.pbCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCerrar.Image = global::Login.Properties.Resources.close;
+            this.pbCerrar.Location = new System.Drawing.Point(7, 7);
+            this.pbCerrar.Name = "pbCerrar";
+            this.pbCerrar.Size = new System.Drawing.Size(15, 15);
+            this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCerrar.TabIndex = 0;
+            this.pbCerrar.TabStop = false;
+            this.pbCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
+            this.pbCerrar.MouseEnter += new System.EventHandler(this.panelCerrar_MouseEnter);
+            this.pbCerrar.MouseLeave += new System.EventHandler(this.panelCerrar_MouseLeave);
             // 
             // labelLogros
             // 
@@ -227,105 +326,6 @@
             this.labelAdmin.TabIndex = 14;
             this.labelAdmin.Text = "Menú Admin";
             // 
-            // pbMinimizar
-            // 
-            this.pbMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbMinimizar.Image = global::Login.Properties.Resources.minimize_sign;
-            this.pbMinimizar.Location = new System.Drawing.Point(7, 7);
-            this.pbMinimizar.Name = "pbMinimizar";
-            this.pbMinimizar.Size = new System.Drawing.Size(15, 15);
-            this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMinimizar.TabIndex = 0;
-            this.pbMinimizar.TabStop = false;
-            this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
-            this.pbMinimizar.MouseEnter += new System.EventHandler(this.panelMinimizar_MouseEnter);
-            this.pbMinimizar.MouseLeave += new System.EventHandler(this.panelMinimizar_MouseLeave);
-            // 
-            // pbCerrar
-            // 
-            this.pbCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCerrar.Image = global::Login.Properties.Resources.close;
-            this.pbCerrar.Location = new System.Drawing.Point(7, 7);
-            this.pbCerrar.Name = "pbCerrar";
-            this.pbCerrar.Size = new System.Drawing.Size(15, 15);
-            this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCerrar.TabIndex = 0;
-            this.pbCerrar.TabStop = false;
-            this.pbCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
-            this.pbCerrar.MouseEnter += new System.EventHandler(this.panelCerrar_MouseEnter);
-            this.pbCerrar.MouseLeave += new System.EventHandler(this.panelCerrar_MouseLeave);
-            // 
-            // pb_MenuAdmin
-            // 
-            this.pb_MenuAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_MenuAdmin.Image = global::Login.Properties.Resources.administracion;
-            this.pb_MenuAdmin.Location = new System.Drawing.Point(24, 240);
-            this.pb_MenuAdmin.Name = "pb_MenuAdmin";
-            this.pb_MenuAdmin.Size = new System.Drawing.Size(50, 50);
-            this.pb_MenuAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_MenuAdmin.TabIndex = 12;
-            this.pb_MenuAdmin.TabStop = false;
-            this.pb_MenuAdmin.Click += new System.EventHandler(this.pb_MenuAdmin_Click);
-            this.pb_MenuAdmin.MouseEnter += new System.EventHandler(this.pb_Admin_MouseEnter);
-            this.pb_MenuAdmin.MouseLeave += new System.EventHandler(this.pb_Admin_MouseLeave);
-            // 
-            // pb_Logros
-            // 
-            this.pb_Logros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_Logros.Image = global::Login.Properties.Resources.premio;
-            this.pb_Logros.Location = new System.Drawing.Point(24, 158);
-            this.pb_Logros.Name = "pb_Logros";
-            this.pb_Logros.Size = new System.Drawing.Size(50, 50);
-            this.pb_Logros.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_Logros.TabIndex = 4;
-            this.pb_Logros.TabStop = false;
-            this.pb_Logros.Click += new System.EventHandler(this.pb_Logros_Click);
-            this.pb_Logros.MouseEnter += new System.EventHandler(this.pb_Logros_MouseEnter);
-            this.pb_Logros.MouseLeave += new System.EventHandler(this.pb_Logros_MouseLeave);
-            // 
-            // pb_Weather
-            // 
-            this.pb_Weather.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_Weather.Image = global::Login.Properties.Resources.Weather;
-            this.pb_Weather.Location = new System.Drawing.Point(24, 83);
-            this.pb_Weather.Name = "pb_Weather";
-            this.pb_Weather.Size = new System.Drawing.Size(50, 50);
-            this.pb_Weather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_Weather.TabIndex = 3;
-            this.pb_Weather.TabStop = false;
-            this.pb_Weather.Click += new System.EventHandler(this.pb_Weather_Click);
-            this.pb_Weather.MouseEnter += new System.EventHandler(this.pb_Weather_MouseEnter);
-            this.pb_Weather.MouseLeave += new System.EventHandler(this.pb_Weather_MouseLeave);
-            // 
-            // pb_Perfil
-            // 
-            this.pb_Perfil.BackColor = System.Drawing.Color.Transparent;
-            this.pb_Perfil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_Perfil.Image = global::Login.Properties.Resources.Usuario;
-            this.pb_Perfil.Location = new System.Drawing.Point(24, 14);
-            this.pb_Perfil.Name = "pb_Perfil";
-            this.pb_Perfil.Size = new System.Drawing.Size(50, 50);
-            this.pb_Perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_Perfil.TabIndex = 2;
-            this.pb_Perfil.TabStop = false;
-            this.pb_Perfil.Click += new System.EventHandler(this.pb_Perfil_Click);
-            this.pb_Perfil.MouseEnter += new System.EventHandler(this.pb_Perfil_MouseEnter);
-            this.pb_Perfil.MouseLeave += new System.EventHandler(this.pb_Perfil_MouseLeave);
-            // 
-            // pb_Logout
-            // 
-            this.pb_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_Logout.Image = global::Login.Properties.Resources.Logout;
-            this.pb_Logout.Location = new System.Drawing.Point(24, 14);
-            this.pb_Logout.Name = "pb_Logout";
-            this.pb_Logout.Size = new System.Drawing.Size(50, 50);
-            this.pb_Logout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_Logout.TabIndex = 4;
-            this.pb_Logout.TabStop = false;
-            this.pb_Logout.Click += new System.EventHandler(this.pb_Logout_Click);
-            this.pb_Logout.MouseEnter += new System.EventHandler(this.pb_Logout_MouseEnter);
-            this.pb_Logout.MouseLeave += new System.EventHandler(this.pb_Logout_MouseLeave);
-            // 
             // timerTrans
             // 
             this.timerTrans.Enabled = true;
@@ -363,18 +363,18 @@
             this.Text = "Menú Principal";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.panelBotones.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panelVentana.ResumeLayout(false);
-            this.panelVentana.PerformLayout();
-            this.panelMinimizar.ResumeLayout(false);
-            this.panelCerrar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_MenuAdmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Logros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Weather)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Perfil)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Logout)).EndInit();
+            this.panelVentana.ResumeLayout(false);
+            this.panelVentana.PerformLayout();
+            this.panelMinimizar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
+            this.panelCerrar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
