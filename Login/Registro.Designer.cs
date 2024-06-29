@@ -303,6 +303,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "Registro";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
             this.Load += new System.EventHandler(this.Registro_Load);

@@ -163,7 +163,7 @@ namespace Login
                 if (this.Opacity == 0)
                 {
                     timerTrans.Stop();
-                    Application.Exit();
+                    Close();
                 }
                 else
                 {
