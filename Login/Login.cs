@@ -144,7 +144,6 @@ namespace Login
         private void Login_Load(object sender, EventArgs e)
         {
             this.trans = "Entrada";
-            this.Top = this.Top + 15;
             timerTrans.Start();
         }
 

@@ -10,6 +10,7 @@ namespace Login
         private bool isDragging = false;
         private Point startPoint = new Point(0, 0);
         private string trans;
+        private Registro registrar;
         public MenuAdmin()
         {
             InitializeComponent();
@@ -17,10 +18,25 @@ namespace Login
 
         private void btn_Registrar_Click(object sender, EventArgs e)
         {
-            Registro registrar = new Registro();
-            Hide();
-            registrar.Show();
-            registrar.FormClosed += (s, args) => Show();
+            trans = "SalidaSinCerrar";
+            timerTrans.Start();
+
+            if (registrar == null || registrar.IsDisposed)
+            {
+                registrar = new Registro();
+
+                registrar.FormClosed += (s, args) =>
+                {
+                    // Mostrar el MenuPrincipal al cerrarse el MenuAdmin
+                    this.Show();
+                    registrar.Dispose(); // Liberar recursos de MenuAdmin
+                    registrar = null;
+                    trans = "Entrada";
+                    timerTrans.Start();
+                };
+                this.Hide();
+                registrar.Show();
+            }
         }
 
         private void btn_MostrarTodosUsuarios_Click(object sender, EventArgs e)
@@ -134,7 +150,6 @@ namespace Login
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
             this.trans = "Entrada";
-            this.Top = this.Top + 15;
             timerTrans.Start();
         }
 
@@ -152,6 +167,17 @@ namespace Login
                     this.Opacity = this.Opacity - .1;
                 }
             }
+            else if (trans == "SalidaSinCerrar")
+            {
+                if (this.Opacity == 0)
+                {
+                    timerTrans.Stop();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity - .1;
+                }
+            }
             else if (trans == "Entrada")
             {
                 if (this.Opacity == 1)
@@ -161,7 +187,6 @@ namespace Login
                 else
                 {
                     this.Opacity = this.Opacity + .15;
-                    this.Top = this.Top - 5;
                 }
             }
             else if (trans == "Cerrar")

@@ -178,6 +178,9 @@ namespace Login
 
         private void pb_MenuAdmin_Click(object sender, EventArgs e)
         {
+            trans = "SalidaSinCerrar";
+            timerTrans.Start();
+
             // Verificar si ya existe una instancia de MenuAdmin
             if (menuAdmin == null || menuAdmin.IsDisposed)
             {
@@ -191,6 +194,8 @@ namespace Login
                     this.Show();
                     menuAdmin.Dispose(); // Liberar recursos de MenuAdmin
                     menuAdmin = null;
+                    trans = "Entrada";
+                    timerTrans.Start();
                 };
 
                 this.Hide();
@@ -337,7 +342,6 @@ namespace Login
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             this.trans = "Entrada";
-            this.Top = this.Top + 15;
             timerTrans.Start();
         }
 
@@ -355,6 +359,17 @@ namespace Login
                     this.Opacity = this.Opacity - .1;
                 }
             }
+            else if (trans == "SalidaSinCerrar")
+            {
+                if (this.Opacity == 0)
+                {
+                    timerTrans.Stop();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity - .1;
+                }
+            }
             else if (trans == "Entrada")
             {
                 if (this.Opacity == 1)
@@ -364,7 +379,6 @@ namespace Login
                 else
                 {
                     this.Opacity = this.Opacity + .15;
-                    this.Top = this.Top - 5;
                 }
             }
         }
