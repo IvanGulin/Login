@@ -9,6 +9,7 @@ namespace Login
         private ClaseSQL sql = new ClaseSQL();
         private bool isDragging = false;
         private Point startPoint = new Point(0, 0);
+        private string trans;
         public Registro()
         {
             InitializeComponent();
@@ -69,7 +70,8 @@ namespace Login
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Close();
+            trans = "Cerrar";
+            timerTrans.Start();
         }
 
         private void panelVentana_MouseDown(object sender, MouseEventArgs e)
@@ -94,7 +96,8 @@ namespace Login
 
         private void pbCerrar_Click(object sender, EventArgs e)
         {
-            Close();
+            trans = "Cerrar";
+            timerTrans.Start();
         }
 
         private void pbMinimizar_Click(object sender, EventArgs e)
@@ -128,6 +131,52 @@ namespace Login
         private void panelCerrar_MouseLeave(object sender, EventArgs e)
         {
             FondoPanelOff(panelCerrar);
+        }
+
+        private void timerTrans_Tick(object sender, EventArgs e)
+        {
+            if (trans == "Salida")
+            {
+                if (this.Opacity == 0)
+                {
+                    timerTrans.Stop();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity - .1;
+                }
+            }
+            else if (trans == "Entrada")
+            {
+                if (this.Opacity == 1)
+                {
+                    timerTrans.Stop();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity + .15;
+                    this.Top = this.Top - 5;
+                }
+            }
+            else if (trans == "Cerrar")
+            {
+                if (this.Opacity == 0)
+                {
+                    timerTrans.Stop();
+                    Application.Exit();
+                }
+                else
+                {
+                    this.Opacity = this.Opacity - .1;
+                }
+            }
+        }
+
+        private void Registro_Load(object sender, EventArgs e)
+        {
+            this.trans = "Entrada";
+            this.Top = this.Top + 15;
+            timerTrans.Start();
         }
     }
 }

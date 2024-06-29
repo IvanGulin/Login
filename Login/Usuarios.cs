@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace Login
+﻿namespace Login
 {
     internal class Usuarios
     {

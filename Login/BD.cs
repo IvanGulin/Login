@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SQLite;
-using System.Windows.Forms;
+﻿using System.Data.SQLite;
 
 namespace Login
 {

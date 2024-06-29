@@ -13,6 +13,7 @@ namespace Login
         public Login()
         {
             InitializeComponent();
+            //sql.iniciarAdmin();
         }
 
         private bool ComprobarUsuario()
@@ -38,7 +39,7 @@ namespace Login
             {
                 ComprobarAdmin();
                 entradaUsuario.Text = "";
-                entradaContraseña.Text = ""; 
+                entradaContraseña.Text = "";
             }
             else
             {
@@ -53,7 +54,7 @@ namespace Login
             trans = "Salida";
             timerTrans.Start();
 
-            if (entradaUsuario.Text.Equals("administrador") )
+            if (entradaUsuario.Text.Equals("administrador"))
             {
                 MenuAdmin menu = new MenuAdmin();
                 Hide();
@@ -68,7 +69,7 @@ namespace Login
                 menuPrincipal.Show();
                 Login login = new Login();
                 menuPrincipal.FormClosed += (s, args) => login.Show();
-                
+
             }
         }
 
@@ -151,7 +152,7 @@ namespace Login
         {
             if (trans == "Salida")
             {
-                if(this.Opacity == 0)
+                if (this.Opacity == 0)
                 {
                     timerTrans.Stop();
                 }

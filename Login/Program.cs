@@ -31,7 +31,7 @@ namespace Login
             {
                 MessageBox.Show("La aplicación ya está abierta.");
             }
-            
+
         }
     }
 }

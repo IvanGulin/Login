@@ -77,7 +77,7 @@ namespace Login
                     selectedItem = listaViewImagenes.SelectedItems[0];
                     imagenSeleccionada = Convert.ToByte(selectedItem.ImageIndex);
                 }
-                catch 
+                catch
                 {
                     imagenSeleccionada = 0;
                 }

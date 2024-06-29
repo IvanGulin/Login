@@ -44,15 +44,19 @@ namespace Login
             {
                 switch (cont)
                 {
-                    case 0: nombre = dato.ToString();
+                    case 0:
+                        nombre = dato.ToString();
                         break;
-                    case 1: apellidos = dato.ToString(); 
+                    case 1:
+                        apellidos = dato.ToString();
                         break;
-                    case 2: descripcion = dato.ToString();
+                    case 2:
+                        descripcion = dato.ToString();
                         break;
-                    case 3: correo = dato.ToString();
+                    case 3:
+                        correo = dato.ToString();
                         break;
-                    case 4: 
+                    case 4:
                         if (dato.Equals("")) imagen = 0;
                         else imagen = Convert.ToByte(dato);
                         break;
@@ -102,7 +106,7 @@ namespace Login
             if (lineas.Length > 4)
             {
                 tbDescripcion.Lines = lineas.Take(maxLineas).ToArray();
-                tbDescripcion.SelectionStart = tbDescripcion.Text.Length; 
+                tbDescripcion.SelectionStart = tbDescripcion.Text.Length;
             }
         }
 

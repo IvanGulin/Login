@@ -44,6 +44,7 @@
             this.btn_BorrarLogrosUsuario = new System.Windows.Forms.Button();
             this.timerTrans = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_EliminarAdmin = new System.Windows.Forms.Button();
             this.panelVentana.SuspendLayout();
             this.panelMinimizar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
@@ -241,12 +242,28 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // btn_EliminarAdmin
+            // 
+            this.btn_EliminarAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_EliminarAdmin.FlatAppearance.BorderSize = 0;
+            this.btn_EliminarAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_EliminarAdmin.Font = new System.Drawing.Font("Perpetua Titling MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EliminarAdmin.ForeColor = System.Drawing.Color.White;
+            this.btn_EliminarAdmin.Location = new System.Drawing.Point(277, 359);
+            this.btn_EliminarAdmin.Name = "btn_EliminarAdmin";
+            this.btn_EliminarAdmin.Size = new System.Drawing.Size(135, 69);
+            this.btn_EliminarAdmin.TabIndex = 21;
+            this.btn_EliminarAdmin.Text = "ELIMINAR ADMIN";
+            this.btn_EliminarAdmin.UseVisualStyleBackColor = false;
+            this.btn_EliminarAdmin.Click += new System.EventHandler(this.btn_EliminarAdmin_Click);
+            // 
             // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(700, 500);
+            this.Controls.Add(this.btn_EliminarAdmin);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_BorrarLogrosUsuario);
             this.Controls.Add(this.btn_MostrarLogrosUsuario);
@@ -291,5 +308,6 @@
         private System.Windows.Forms.Button btn_BorrarLogrosUsuario;
         private System.Windows.Forms.Timer timerTrans;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_EliminarAdmin;
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Text;
 using System.Windows.Forms;
@@ -11,6 +10,12 @@ namespace Login
     internal class ClaseSQL
     {
         private string connectionString = "Data Source=usuarios.db;Version=3;";
+
+        public void iniciarAdmin()
+        {
+            //AddUsuario("administrador", "administrador", "admin@admin.com");
+            AddAdmin("administrador");
+        }
 
         public bool ValidarUsuario(string nombreUsuario, string contraseña)
         {
@@ -338,7 +343,7 @@ namespace Login
             using (var command = new SQLiteCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
-                command.Parameters.AddWithValue("@Imagen", imagen); 
+                command.Parameters.AddWithValue("@Imagen", imagen);
 
                 try
                 {
@@ -484,7 +489,7 @@ namespace Login
                         while (reader.Read())
                         {
                             int usuarioLogroID = reader.GetInt32(0);
-                            int logroID = reader.GetInt32(1); 
+                            int logroID = reader.GetInt32(1);
 
                             logroIDlista.Add(logroID);
                         }
@@ -608,5 +613,6 @@ namespace Login
 
             return logros;
         }
+
     }
 }

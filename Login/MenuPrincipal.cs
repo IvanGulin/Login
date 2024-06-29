@@ -20,8 +20,7 @@ namespace Login
         private Timer timerPanel;
         private MensajeLogro mensajeLogro;
         private PerfilUsuario perfil;
-        private bool cambioPerfil, cambioImagenPerfil;
-        private bool comprobadoPerfil, comprobadoImagen;
+        private bool comprobadoPerfil, comprobadoImagen, cambioPerfil;
         private MenuAdmin menuAdmin;
 
         private Timer timerEsconder;

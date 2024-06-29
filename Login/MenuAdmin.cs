@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -183,6 +182,14 @@ namespace Login
         {
             this.trans = "Salida";
             timerTrans.Start();
+        }
+
+        private void btn_EliminarAdmin_Click(object sender, EventArgs e)
+        {
+            VerLogrosUsuarioInput vl = new VerLogrosUsuarioInput();
+            vl.ShowDialog();
+            string nombreUsuario = vl.NombreUsuario;
+            sql.EliminarAdmin(nombreUsuario);
         }
     }
 }

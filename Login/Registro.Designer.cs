@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.botonRegistrar = new System.Windows.Forms.Button();
             this.labelRegistro = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.panelCerrar = new System.Windows.Forms.Panel();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timerTrans = new System.Windows.Forms.Timer(this.components);
             this.panelVentana.SuspendLayout();
             this.panelMinimizar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
@@ -269,6 +271,12 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // timerTrans
+            // 
+            this.timerTrans.Enabled = true;
+            this.timerTrans.Interval = 2;
+            this.timerTrans.Tick += new System.EventHandler(this.timerTrans_Tick);
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,6 +305,7 @@
             this.Name = "Registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
+            this.Load += new System.EventHandler(this.Registro_Load);
             this.panelVentana.ResumeLayout(false);
             this.panelVentana.PerformLayout();
             this.panelMinimizar.ResumeLayout(false);
@@ -329,5 +338,6 @@
         private System.Windows.Forms.PictureBox pbCerrar;
         private System.Windows.Forms.Label labelVentana;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timerTrans;
     }
 }
