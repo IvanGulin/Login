@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -20,8 +21,11 @@ namespace Login
         private Timer timerPanel;
         private MensajeLogro mensajeLogro;
         private PerfilUsuario perfil;
-        private bool comprobadoPerfil, comprobadoImagen, cambioPerfil;
+        private bool comprobadoPerfil, comprobadoImagen;
         private MenuAdmin menuAdmin;
+        private Aplicacion weather;
+        private Logros logro;
+        private byte persona;
 
         private Timer timerEsconder;
 
@@ -58,16 +62,77 @@ namespace Login
             labelAdmin.Visible = false;
             pb_MenuAdmin.Visible = false;
             pb_MenuAdmin.Enabled = false;
+            pb_Activo1.Visible = false;
+            pb_Activo2.Visible = false;
+            pb_Activo3.Visible = false;
+            pb_Activo4.Visible = false;
+            pb_Activo1.Enabled = false;
+            pb_Activo2.Enabled = false;
+            pb_Activo3.Enabled = false;
+            pb_Activo4.Enabled = false;
+            pb_Activo5.Visible = false;
+            pb_Persona.Visible = false; 
+            pb_Persona.Enabled = false;
+            labelPersona.Visible = false;
+
+            ComprobarPersona();
 
             //sql.BorrarTodosLogrosUsuario(nombreUsuario);
-
+            perfil = new PerfilUsuario(nombreUsuario);
             IniciarPerfil();
+            IniciarTiempo();
+            UpdatePerfil();
+        }
+
+        private void ComprobarPersona()
+        {
+            if (nombreUsuario.ToLower().Contains("carla"))
+            {
+                pb_Persona.Image = Resources.probeta;
+                labelPersona.Text = "La Química";
+                pb_Persona.Visible = true;
+                pb_Persona.Enabled = true;
+                persona = 1;
+
+            }
+            else if (nombreUsuario.ToLower().Contains("iyan"))
+            {
+                pb_Persona.Image = Resources.bombero;
+                labelPersona.Text = "El Bombero";
+                pb_Persona.Visible = true;
+                pb_Persona.Enabled = true;
+                persona = 2;
+            }
+            else if (nombreUsuario.ToLower().Contains("fer"))
+            {
+                pb_Persona.Image = Resources.tonto;
+                labelPersona.Text = "El Tonto";
+                pb_Persona.Visible = true;
+                pb_Persona.Enabled = true;
+                persona = 3;
+            }
+        }
+
+        private void MostrarMensaje()
+        {
+            if (persona == 1)
+            {
+                MessageBox.Show("Hola carla UwU");
+            }
+            else if (persona == 2)
+            {
+                MessageBox.Show("Hola iyán bomberín");
+            }
+            else if (persona == 3)
+            {
+                ParaFer paraFer = new ParaFer();
+                paraFer.ShowDialog();
+            }
         }
 
         private void TimerPanel_Tick(object sender, EventArgs e)
         {
             timerPanel.Stop();
-
             MostrarPanel("Logro Ejemplo");
         }
 
@@ -108,26 +173,30 @@ namespace Login
 
         private void IniciarPerfil()
         {
+            perfil = new PerfilUsuario(nombreUsuario);
+            perfil.PasarLogro += new PerfilUsuario.pasarLogros(ejecutar);
+
             if (sql.EsAdmin(nombreUsuario))
             {
                 pb_MenuAdmin.Visible = true;
                 pb_MenuAdmin.Enabled = true;
             }
-            perfil = new PerfilUsuario(nombreUsuario, listaLogroID);
-            perfil.PasarLogro += new PerfilUsuario.pasarLogros(ejecutar);
-            ShowFormInPanel(perfil, panelForm);
-            labelVentana.Text = "PERFIL";
 
-            if (comprobarLogros.EsPrimeraVez(1, listaLogroID, nombreUsuario))
+            if (comprobarLogros.EsPrimeraVez(1, nombreUsuario))
             {
                 sql.AddLogroUsuario(nombreUsuario, 1);
                 MostrarPanel("Primer Login.");
             }
         }
 
+        private void UpdatePerfil()
+        {
+            ShowFormInPanel(perfil, panelForm);
+            labelVentana.Text = "PERFIL";
+        }
+
         private void ejecutar(int logro)
         {
-            cambioPerfil = true;
             ComprobarLogrosPerfil(logro);
         }
 
@@ -148,7 +217,7 @@ namespace Login
 
         private void pb_Perfil_Click(object sender, EventArgs e)
         {
-            IniciarPerfil();
+            UpdatePerfil();
         }
 
         private void ListaLogros()
@@ -158,21 +227,30 @@ namespace Login
 
         private void pb_Weather_Click(object sender, EventArgs e)
         {
-            labelVentana.Text = "EL TIEMPO";
-            Aplicacion weather = new Aplicacion();
-            ShowFormInPanel(weather, panelForm);
+            UpdateTiempo();
 
-            if (comprobarLogros.EsPrimeraVez(4, listaLogroID, nombreUsuario))
+            if (comprobarLogros.EsPrimeraVez(4, nombreUsuario))
             {
                 sql.AddLogroUsuario(nombreUsuario, 4);
                 MostrarPanel("Utiliza la app del Tiempo.");
             }
         }
 
+        private void IniciarTiempo()
+        {
+            weather = new Aplicacion();
+        }
+
+        private void UpdateTiempo()
+        {
+            labelVentana.Text = "EL TIEMPO";
+            ShowFormInPanel(weather, panelForm);
+        }
+
         private void pb_Logros_Click(object sender, EventArgs e)
         {
             labelVentana.Text = "LOGROS";
-            Logros logro = new Logros(nombreUsuario);
+            logro = new Logros(nombreUsuario);
             ShowFormInPanel(logro, panelForm);
         }
 
@@ -222,48 +300,56 @@ namespace Login
         {
             MouseEnter(pb_Perfil);
             labelPerfil.Visible = true;
+            pb_Activo1.Visible = true;
         }
 
         private void pb_Perfil_MouseLeave(object sender, EventArgs e)
         {
             MouseLeave(pb_Perfil);
             labelPerfil.Visible = false;
+            pb_Activo1.Visible = false;
         }
 
         private void pb_Weather_MouseEnter(object sender, EventArgs e)
         {
             MouseEnter(pb_Weather);
             labelWeather.Visible = true;
+            pb_Activo2.Visible = true;
         }
 
         private void pb_Weather_MouseLeave(object sender, EventArgs e)
         {
             MouseLeave(pb_Weather);
             labelWeather.Visible = false;
+            pb_Activo2.Visible = false;
         }
 
         private void pb_Logros_MouseEnter(object sender, EventArgs e)
         {
             MouseEnter(pb_Logros);
             labelLogros.Visible = true;
+            pb_Activo3.Visible = true;
         }
 
         private void pb_Logros_MouseLeave(object sender, EventArgs e)
         {
             MouseLeave(pb_Logros);
             labelLogros.Visible = false;
+            pb_Activo3.Visible = false;
         }
 
         private void pb_Admin_MouseEnter(object sender, EventArgs e)
         {
             MouseEnter(pb_MenuAdmin);
             labelAdmin.Visible = true;
+            pb_Activo4.Visible = true;
         }
 
         private void pb_Admin_MouseLeave(object sender, EventArgs e)
         {
             MouseLeave(pb_MenuAdmin);
             labelAdmin.Visible = false;
+            pb_Activo4.Visible = false;
         }
 
         private void pb_Logout_MouseEnter(object sender, EventArgs e)
@@ -337,6 +423,25 @@ namespace Login
         private void panelCerrar_MouseLeave(object sender, EventArgs e)
         {
             FondoPanelOff(panelCerrar);
+        }
+
+        private void pb_Persona_MouseEnter(object sender, EventArgs e)
+        {
+            MouseEnter(pb_Persona);
+            labelPersona.Visible = true;
+            pb_Activo5.Visible = true;
+        }
+
+        private void pb_Persona_MouseLeave(object sender, EventArgs e)
+        {
+            MouseLeave(pb_Persona);
+            labelPersona.Visible = false;
+            pb_Activo5.Visible = false;
+        }
+
+        private void pb_Persona_Click(object sender, EventArgs e)
+        {
+            MostrarMensaje();
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)

@@ -5,7 +5,8 @@ namespace Login
     internal class ComprobarLogros
     {
         private ClaseSQL sql = new ClaseSQL();
-        public bool EsPrimeraVez(int i, List<int> listaLogroID, string nombreUsuario)
+        private List<int> listaLogroID;
+        public bool EsPrimeraVez(int i, string nombreUsuario)
         {
             listaLogroID = sql.VerTodosLogrosUsuario(nombreUsuario);
 

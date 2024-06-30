@@ -150,6 +150,7 @@ namespace Login
                     }
                 }
             }
+            BorrarTodosLogrosUsuario(usuario);
         }
 
         public bool AddAdmin(string nombreUsuario)
